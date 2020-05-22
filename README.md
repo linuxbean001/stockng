@@ -1,2 +1,1 @@
 # stockng
-description stockng
