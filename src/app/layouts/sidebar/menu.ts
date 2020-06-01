@@ -41,8 +41,49 @@ export const MENU: MenuItem[] = [
           //  },
        // ]
   //  },
+  {
+         id: 4,
+          label: 'Cluster',
+          icon: 'bx bx-planet',
+         // badge: {
+            // variant: 'info',
+             // text: '03',
+        // },
+          subItems: [
+            {
+                id: 1,
+                label: 'Namespaces',
+                link: '/namespaces',
+                parentId: 4
+            },
+            {
+               id: 2,
+                label: 'Nodes',
+                link: '/nodes',
+            parentId: 4
+            },
+            {
+                id: 3,
+                label: 'Persistent Volumes',
+               link: '/',
+            parentId: 2
+          },
+          {
+                id: 4,
+                label: 'Roles',
+               link: '/',
+            parentId: 4
+          },
+          {
+                id: 5,
+                label: 'Storage Classes',
+               link: '/',
+            parentId: 4
+          },
+        ]
+    },
      {
-         id: 2,
+         id: 5,
           label: 'Compute',
           icon: 'bx bx-message-rounded-detail',
          // badge: {
@@ -54,19 +95,19 @@ export const MENU: MenuItem[] = [
                 id: 3,
                 label: 'List Of Clusters',
                 link: '/',
-                parentId: 2
+                parentId: 5
             },
             {
                id: 4,
                 label: 'List Of PRODS',
                 link: '/',
-            parentId: 2
+            parentId: 5
             },
             {
                 id: 5,
                 label: 'Deployed PRODS',
                link: '/',
-            parentId: 2
+            parentId: 5
           },
         ]
     },

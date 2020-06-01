@@ -4,11 +4,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { CalendarComponent } from './calendar/calendar.component';
 import { ChatComponent } from './chat/chat.component';
 import { ContainerregistryComponent } from './containerregistry/containerregistry.component';
+import { NamespacesComponent } from './namespaces/namespaces.component';
+import { NodesComponent } from './nodes/nodes.component';
 import { DefaultComponent } from './dashboards/default/default.component';
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' },
   { path: 'dashboard', component: DefaultComponent },
   { path: 'containerregistry', component: ContainerregistryComponent },
+  { path: 'namespaces', component: NamespacesComponent },
+  { path: 'nodes', component: NodesComponent },
   { path: 'calendar', component: CalendarComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'dashboards', loadChildren: () => import('./dashboards/dashboards.module').then(m => m.DashboardsModule) },
