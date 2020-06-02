@@ -38,14 +38,15 @@ import { ContainerregistryComponent } from './containerregistry/containerregistr
 import { NamespacesComponent } from './namespaces/namespaces.component';
 import { NodesComponent } from './nodes/nodes.component';
 import { AdvancedSortableDirective } from './namespaces/advanced-sortable.directive'
-
+import { NodesSortableDirective } from './nodes/nodes-sortable.directive';
+import { NodesdetailsComponent } from './nodesdetails/nodesdetails.component'
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
   wheelSpeed: 0.3
 };
 
 @NgModule({
-  declarations: [CalendarComponent, ChatComponent, ContainerregistryComponent, NamespacesComponent, NodesComponent,AdvancedSortableDirective],
+  declarations: [CalendarComponent, ChatComponent, ContainerregistryComponent, NamespacesComponent, NodesComponent,AdvancedSortableDirective,NodesSortableDirective, NodesdetailsComponent],
   imports: [
     CommonModule,
     FormsModule,

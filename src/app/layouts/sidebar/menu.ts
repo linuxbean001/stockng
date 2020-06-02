@@ -53,25 +53,25 @@ export const MENU: MenuItem[] = [
             {
                 id: 1,
                 label: 'Namespaces',
-                link: '/namespaces',
+                link: '/cluster/namespaces',
                 parentId: 4
             },
             {
                id: 2,
                 label: 'Nodes',
-                link: '/nodes',
+                link: '/cluster/nodes',
             parentId: 4
             },
             {
                 id: 3,
                 label: 'Persistent Volumes',
-               link: '/',
+               link: '/cluster/',
             parentId: 2
           },
           {
                 id: 4,
                 label: 'Roles',
-               link: '/',
+               link: '/cluster/',
             parentId: 4
           },
           {
