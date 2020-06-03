@@ -6,8 +6,12 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
+
 import { NgbNavModule, NgbDropdownModule, NgbModalModule, NgbTooltipModule, NgbPaginationModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { ChartsModule } from 'ng2-charts';
+import { NgxChartistModule } from 'ngx-chartist';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 import { WidgetModule } from '../shared/widget/widget.module';
 import { UIModule } from '../shared/ui/ui.module';
@@ -54,6 +58,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NgbModalModule,
     PagesRoutingModule,
     NgApexchartsModule,
+    ChartsModule,
+    NgxChartistModule,
+    NgxEchartsModule,
     ReactiveFormsModule,
     DashboardsModule,
     CryptoModule,
