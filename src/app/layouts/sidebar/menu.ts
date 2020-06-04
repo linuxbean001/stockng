@@ -42,7 +42,7 @@ export const MENU: MenuItem[] = [
        // ]
   //  },
   {
-         id: 4,
+         id: 3,
           label: 'Cluster',
           icon: 'bx bx-planet',
          // badge: {
@@ -54,32 +54,83 @@ export const MENU: MenuItem[] = [
                 id: 1,
                 label: 'Namespaces',
                 link: '/cluster/namespaces',
-                parentId: 4
+                parentId: 3
             },
             {
                id: 2,
                 label: 'Nodes',
                 link: '/cluster/nodes',
-            parentId: 4
+            parentId: 3
             },
             {
                 id: 3,
                 label: 'Persistent Volumes',
-               link: '/cluster/',
-            parentId: 2
+               link: '/cluster/persistent',
+            parentId: 3
           },
           {
                 id: 4,
                 label: 'Roles',
-               link: '/cluster/',
-            parentId: 4
+               link: '/cluster/roles',
+            parentId: 3
           },
           {
                 id: 5,
                 label: 'Storage Classes',
+               link: '/cluster/storageclasses',
+            parentId: 3
+          },
+        ]
+    }, {
+         id: 4,
+          label: 'Workloads',
+          icon: 'bx bx-sticker',
+         // badge: {
+            // variant: 'info',
+             // text: '03',
+        // },
+          subItems: [
+            {
+                id: 1,
+                label: 'Deployments',
+                link: '/',
+                parentId: 4
+            },
+            {
+               id: 2,
+                label: 'Replica Sets',
+                link: '/',
+            parentId: 4
+            },
+            {
+                id: 3,
+                label: 'Replication Controllers',
+               link: '/',
+            parentId: 2
+          },
+          {
+                id: 4,
+                label: 'Daemon Sets',
                link: '/',
             parentId: 4
           },
+          {
+                id: 5,
+                label: 'Pet Sets',
+               link: '/',
+            parentId: 4
+          },{
+                id: 6,
+                label: 'Jobs',
+               link: '/',
+            parentId: 4
+          },{
+                id: 7,
+                label: 'Pods',
+               link: '/',
+            parentId: 4
+          },
+
         ]
     },
      {
@@ -92,19 +143,19 @@ export const MENU: MenuItem[] = [
         // },
           subItems: [
             {
-                id: 3,
+                id: 1,
                 label: 'List Of Clusters',
                 link: '/',
                 parentId: 5
             },
             {
-               id: 4,
+               id: 2,
                 label: 'List Of PRODS',
                 link: '/',
             parentId: 5
             },
             {
-                id: 5,
+                id: 3,
                 label: 'Deployed PRODS',
                link: '/',
             parentId: 5

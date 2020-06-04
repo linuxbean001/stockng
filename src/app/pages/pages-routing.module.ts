@@ -7,6 +7,9 @@ import { ContainerregistryComponent } from './containerregistry/containerregistr
 import { NamespacesComponent } from './namespaces/namespaces.component';
 import { NodesComponent } from './nodes/nodes.component';
 import { NodesdetailsComponent } from './nodesdetails/nodesdetails.component'
+import { RolesComponent } from './roles/roles.component'
+import { PersistentComponent } from './persistent/persistent.component';
+import { StorageclassesComponent } from './storageclasses/storageclasses.component'
 import { DefaultComponent } from './dashboards/default/default.component';
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' },
@@ -15,6 +18,9 @@ const routes: Routes = [
   { path: 'cluster/namespaces', component: NamespacesComponent },
   { path: 'cluster/nodes', component: NodesComponent },
   { path: 'cluster/nodes/details', component: NodesdetailsComponent },
+  { path: 'cluster/roles', component: RolesComponent },
+  { path: 'cluster/persistent', component: PersistentComponent },
+  { path: 'cluster/storageclasses', component: StorageclassesComponent },
   { path: 'calendar', component: CalendarComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'dashboards', loadChildren: () => import('./dashboards/dashboards.module').then(m => m.DashboardsModule) },

@@ -41,16 +41,22 @@ import { ChatComponent } from './chat/chat.component';
 import { ContainerregistryComponent } from './containerregistry/containerregistry.component';
 import { NamespacesComponent } from './namespaces/namespaces.component';
 import { NodesComponent } from './nodes/nodes.component';
-import { AdvancedSortableDirective } from './namespaces/advanced-sortable.directive'
+import { AdvancedSortableDirective } from './namespaces/advanced-sortable.directive';
+import { StorageclassesSortableDirective } from './storageclasses/storageclasses-sortable.directive';
+import { RolesSortableDirective } from './roles/roles-sortable.directive';
 import { NodesSortableDirective } from './nodes/nodes-sortable.directive';
-import { NodesdetailsComponent } from './nodesdetails/nodesdetails.component'
+import { NodesdetailsComponent } from './nodesdetails/nodesdetails.component';
+import { RolesComponent } from './roles/roles.component';
+import { PersistentComponent } from './persistent/persistent.component';
+import { PersistentSortableDirective } from './persistent/persistent-sortable.directive';
+import { StorageclassesComponent } from './storageclasses/storageclasses.component'
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
   wheelSpeed: 0.3
 };
 
 @NgModule({
-  declarations: [CalendarComponent, ChatComponent, ContainerregistryComponent, NamespacesComponent, NodesComponent,AdvancedSortableDirective,NodesSortableDirective, NodesdetailsComponent],
+  declarations: [CalendarComponent, ChatComponent, ContainerregistryComponent, NamespacesComponent, NodesComponent,AdvancedSortableDirective,NodesSortableDirective, NodesdetailsComponent,RolesSortableDirective,StorageclassesSortableDirective, RolesComponent, PersistentComponent,PersistentSortableDirective, StorageclassesComponent],
   imports: [
     CommonModule,
     FormsModule,
