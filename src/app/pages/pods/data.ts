@@ -57,8 +57,8 @@ const tableData = [
 const OveviewChart: ChartType = {
     series: [{
         type: 'area',
-        name: 'BTC',
-        data: [87, 57, 74, 99, 75, 38, 62, 47, 82, 56, 45, 47]
+        name: 'CPU',
+        data: ['0.0008', '0.002', '0.002', '0.003', '0.003','0']
     }],
     chart: {
         height: 240,
@@ -72,17 +72,50 @@ const OveviewChart: ChartType = {
     },
     stroke: {
         curve: 'smooth',
-        width: 2,
-        dashArray: [0, 0, 3]
+        width: 1,
+        dashArray: [0]
     },
     fill: {
         type: 'solid',
-        opacity: [0.15, 0.05, 1],
+        opacity: [0.15],
     },
     xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        categories: ['09.20', '09.23', '09.26', '09.30', '09.34'],
     },
-    colors: ['#f1b44c'],
+    colors: ['#34c38f'],
 };
 
-export { tableData,OveviewChart };
+
+const OveviewChartMemory: ChartType = {
+    series: [{
+        type: 'area',
+        name: 'Memory',
+        data: ['11.9 Mi', '23.8 Mi', '35.8 Mi', '47.7 Mi', '53.6 Mi','0']
+    }],
+    chart: {
+        height: 240,
+        type: 'line',
+        toolbar: {
+            show: false,
+        }
+    },
+    dataLabels: {
+        enabled: false
+    },
+    stroke: {
+        curve: 'smooth',
+        width: 1,
+        dashArray: [0]
+    },
+    fill: {
+        type: 'solid',
+        opacity: [0.15],
+    },
+    xaxis: {
+        categories: ['09.20', '09.23', '09.26', '09.30', '09.34'],
+    },
+    colors: ['#556ee6'],
+};
+
+
+export { tableData,OveviewChart,OveviewChartMemory};
