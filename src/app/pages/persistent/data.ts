@@ -1,6 +1,6 @@
 const tableData = [
   {
-    name: 'dumy data',
+    name: 'dummy data',
     capacity: 'dumy data',
     accessmodes:'-',
     reclaimpolicy:'-',
@@ -10,8 +10,8 @@ const tableData = [
     reason:'-',
     age: '6 minutes'
   },{
-    name: 'dumy data',
-    capacity: 'dumy data',
+    name: 'dummy data',
+    capacity: 'dummy data',
     accessmodes:'-',
     reclaimpolicy:'-',
     status: 'active',

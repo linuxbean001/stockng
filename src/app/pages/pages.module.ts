@@ -49,14 +49,20 @@ import { NodesdetailsComponent } from './nodesdetails/nodesdetails.component';
 import { RolesComponent } from './roles/roles.component';
 import { PersistentComponent } from './persistent/persistent.component';
 import { PersistentSortableDirective } from './persistent/persistent-sortable.directive';
-import { StorageclassesComponent } from './storageclasses/storageclasses.component'
+import { StorageclassesComponent } from './storageclasses/storageclasses.component';
+import { DevelopmentsComponent } from './developments/developments.component';
+import { ReplicasetsComponent } from './replicasets/replicasets.component';
+import { DevelopmentsSortableDirective } from './developments/developments-sortable.directive';
+import { ReplicasetsSortableDirective } from './replicasets/replicasets-sortable.directive';
+import { PodsComponent } from './pods/pods.component';
+import { PodsSortableDirective } from './pods/pods-sortable.directive';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
   wheelSpeed: 0.3
 };
 
 @NgModule({
-  declarations: [CalendarComponent, ChatComponent, ContainerregistryComponent, NamespacesComponent, NodesComponent,AdvancedSortableDirective,NodesSortableDirective, NodesdetailsComponent,RolesSortableDirective,StorageclassesSortableDirective, RolesComponent, PersistentComponent,PersistentSortableDirective, StorageclassesComponent],
+  declarations: [CalendarComponent, ChatComponent, ContainerregistryComponent, NamespacesComponent, NodesComponent,AdvancedSortableDirective,NodesSortableDirective, NodesdetailsComponent,RolesSortableDirective,StorageclassesSortableDirective, RolesComponent, PersistentComponent,PersistentSortableDirective, StorageclassesComponent, DevelopmentsComponent, ReplicasetsComponent,ReplicasetsSortableDirective,DevelopmentsSortableDirective, PodsComponent,PodsSortableDirective],
   imports: [
     CommonModule,
     FormsModule,

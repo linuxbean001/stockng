@@ -11,6 +11,9 @@ import { RolesComponent } from './roles/roles.component'
 import { PersistentComponent } from './persistent/persistent.component';
 import { StorageclassesComponent } from './storageclasses/storageclasses.component'
 import { DefaultComponent } from './dashboards/default/default.component';
+import { DevelopmentsComponent } from './developments/developments.component';
+import { ReplicasetsComponent } from './replicasets/replicasets.component';
+import { PodsComponent } from './pods/pods.component';
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' },
   { path: 'dashboard', component: DefaultComponent },
@@ -21,6 +24,9 @@ const routes: Routes = [
   { path: 'cluster/roles', component: RolesComponent },
   { path: 'cluster/persistent', component: PersistentComponent },
   { path: 'cluster/storageclasses', component: StorageclassesComponent },
+  { path: 'workloads/developments', component: DevelopmentsComponent },
+  { path: 'workloads/replica', component: ReplicasetsComponent },
+  { path: 'workloads/pods', component: PodsComponent },
   { path: 'calendar', component: CalendarComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'dashboards', loadChildren: () => import('./dashboards/dashboards.module').then(m => m.DashboardsModule) },

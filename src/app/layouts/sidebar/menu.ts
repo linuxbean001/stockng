@@ -81,7 +81,7 @@ export const MENU: MenuItem[] = [
             parentId: 3
           },
         ]
-    }, {
+    },{
          id: 4,
           label: 'Workloads',
           icon: 'bx bx-sticker',
@@ -93,13 +93,13 @@ export const MENU: MenuItem[] = [
             {
                 id: 1,
                 label: 'Deployments',
-                link: '/',
+                link: '/workloads/developments',
                 parentId: 4
             },
             {
                id: 2,
                 label: 'Replica Sets',
-                link: '/',
+                link: '/workloads/replica',
             parentId: 4
             },
             {
@@ -127,7 +127,7 @@ export const MENU: MenuItem[] = [
           },{
                 id: 7,
                 label: 'Pods',
-               link: '/',
+               link: '/workloads/pods',
             parentId: 4
           },
 
