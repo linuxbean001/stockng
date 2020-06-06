@@ -105,13 +105,13 @@ export const MENU: MenuItem[] = [
             {
                 id: 3,
                 label: 'Replication Controllers',
-               link: '/',
+               link: '/workloads/replication',
             parentId: 2
           },
           {
                 id: 4,
                 label: 'Daemon Sets',
-               link: '/',
+               link: '/workloads/daemonsets',
             parentId: 4
           },
           {
@@ -122,7 +122,7 @@ export const MENU: MenuItem[] = [
           },{
                 id: 6,
                 label: 'Jobs',
-               link: '/',
+               link: '/workloads/jobs',
             parentId: 4
           },{
                 id: 7,
@@ -134,6 +134,28 @@ export const MENU: MenuItem[] = [
         ]
     },
      {
+         id: 5,
+          label: 'Discovery Balancing',
+          icon: 'bx bx-arrow-to-top',
+         // badge: {
+            // variant: 'info',
+             // text: '03',
+        // },
+          subItems: [
+            {
+                id: 1,
+                label: 'Ingresses',
+                link: '/',
+                parentId: 5
+            },
+            {
+               id: 2,
+                label: 'Services',
+                link: '/',
+            parentId: 5
+            }
+        ]
+    }, {
          id: 5,
           label: 'Compute',
           icon: 'bx bx-message-rounded-detail',
