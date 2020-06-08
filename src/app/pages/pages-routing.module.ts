@@ -17,6 +17,9 @@ import { PodsComponent } from './pods/pods.component';
 import { ReplicationComponent } from './replication/replication.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { DaemonsetsComponent } from './daemonsets/daemonsets.component';
+import { IngressesComponent } from './ingresses/ingresses.component';
+import { ServicesComponent } from './services/services.component';
+import { ServicesdetailsComponent } from './servicesdetails/servicesdetails.component';
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' },
   { path: 'dashboard', component: DefaultComponent },
@@ -33,6 +36,9 @@ const routes: Routes = [
   { path: 'workloads/replication', component: ReplicationComponent },
   { path: 'workloads/jobs', component: JobsComponent },
   { path: 'workloads/daemonsets', component: DaemonsetsComponent },
+  { path: 'discovery/ingresses', component: IngressesComponent },
+  { path: 'discovery/services', component: ServicesComponent },
+  { path: 'discovery/services/details', component: ServicesdetailsComponent },
   { path: 'calendar', component: CalendarComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'dashboards', loadChildren: () => import('./dashboards/dashboards.module').then(m => m.DashboardsModule) },

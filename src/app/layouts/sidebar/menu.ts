@@ -145,13 +145,13 @@ export const MENU: MenuItem[] = [
             {
                 id: 1,
                 label: 'Ingresses',
-                link: '/',
+                link: '/discovery/ingresses',
                 parentId: 5
             },
             {
                id: 2,
                 label: 'Services',
-                link: '/',
+                link: '/discovery/services',
             parentId: 5
             }
         ]

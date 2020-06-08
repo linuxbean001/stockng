@@ -62,13 +62,19 @@ import { JobsComponent } from './jobs/jobs.component';
 import { JobsSortableDirective } from './jobs/jobs-sortable.directive';
 import { DaemonsetsComponent } from './daemonsets/daemonsets.component';
 import { DaemonsetsSortableDirective } from './daemonsets/daemonsets-sortable.directive';
+import { IngressesComponent } from './ingresses/ingresses.component';
+import { IngressesSortableDirective } from './ingresses/ingresses-sortable.directive';
+import { ServicesComponent } from './services/services.component';
+import { ServicesSortableDirective } from './services/services-sortable.directive';
+import { ServicesdetailsComponent } from './servicesdetails/servicesdetails.component';
+import { ServicesdetailsSortableDirective } from './servicesdetails/servicesdetails-sortable.directive';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
   wheelSpeed: 0.3
 };
 
 @NgModule({
-  declarations: [CalendarComponent, ChatComponent, ContainerregistryComponent, NamespacesComponent, NodesComponent,AdvancedSortableDirective,NodesSortableDirective, NodesdetailsComponent,RolesSortableDirective,StorageclassesSortableDirective, RolesComponent, PersistentComponent,PersistentSortableDirective, StorageclassesComponent, DevelopmentsComponent, ReplicasetsComponent,ReplicasetsSortableDirective,DevelopmentsSortableDirective, PodsComponent,PodsSortableDirective, ReplicationComponent,ReplicationSortableDirective, JobsComponent, DaemonsetsComponent,DaemonsetsSortableDirective],
+  declarations: [CalendarComponent, ChatComponent, ContainerregistryComponent, NamespacesComponent, NodesComponent,AdvancedSortableDirective,NodesSortableDirective, NodesdetailsComponent,RolesSortableDirective,StorageclassesSortableDirective, RolesComponent, PersistentComponent,PersistentSortableDirective, StorageclassesComponent, DevelopmentsComponent, ReplicasetsComponent,ReplicasetsSortableDirective,DevelopmentsSortableDirective, PodsComponent,PodsSortableDirective, ReplicationComponent,ReplicationSortableDirective, JobsComponent, DaemonsetsComponent,DaemonsetsSortableDirective, IngressesComponent,IngressesSortableDirective, ServicesComponent,ServicesSortableDirective, ServicesdetailsComponent,ServicesdetailsSortableDirective,],
   imports: [
     CommonModule,
     FormsModule,
