@@ -155,7 +155,35 @@ export const MENU: MenuItem[] = [
             parentId: 5
             }
         ]
-    }, {
+    },{
+         id: 5,
+          label: 'Config and Storage',
+          icon: 'bx bx-badge',
+         // badge: {
+            // variant: 'info',
+             // text: '03',
+        // },
+          subItems: [
+            {
+                id: 1,
+                label: 'Config Maps',
+                link: '/config/configmaps',
+                parentId: 5
+            },
+            {
+               id: 2,
+                label: 'PersistentVolumeClaims',
+                link: '/config/persistentvalume',
+            parentId: 5
+            },
+            {
+               id: 2,
+                label: 'Secrets',
+                link: '/config/secrets',
+            parentId: 5
+            }
+        ]
+    },{
          id: 5,
           label: 'Compute',
           icon: 'bx bx-message-rounded-detail',

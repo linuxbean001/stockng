@@ -1,21 +1,16 @@
 const tableData = [
   { 
-    name: 'kubernetes',
-    namespace:'default',
-    lebels: 'component:apiserver provider:kubernetes',
-    clusterip: '10.96.0.1',
-    internalendpoints: 'kubernetes:443 TCP kubernetes:0 TCP',
-    externalendpoints:'-',
-    age: '26 minutes',
+    name: 'wordpress-78c9b8d684-hkc5s',
+    node:'node-lq4c',
+    status: 'Runnging',
+    restarts: '0',
+    age: '23 hours',
   },{ 
-    name: 'kubernetes',
-    namespace:'default',
-    lebels: 'component:apiserver provider:kubernetes',
-    clusterip: '10.96.0.1',
-    internalendpoints: 'kubernetes:443 TCP kubernetes:0 TCP',
-    externalendpoints:'-',
-    age: '26 minutes',
-  },
+    name: 'wordpress-78c9b8d684-hkc5s',
+    node:'node-lq4c',
+    status: 'Runnging',
+    restarts: '0',
+    age: '23 hours',
+  }
 ];
-
 export { tableData };

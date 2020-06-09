@@ -1,11 +1,11 @@
 <div class="container-fluid">
-  <app-page-title title="DISCOVERY AND LOAD BALANCING" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <app-page-title title="CONFIG AND STORAGE" [breadcrumbItems]="breadCrumbItems"></app-page-title>
 
   <div class="row">
     <div class="col-12">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">Ingresses</h4>
+          <h4 class="card-title">Config Maps</h4>
          <!--  <p class="card-sub-title">
             Example of datatable.
           </p> -->
@@ -40,8 +40,9 @@
                   <th sortable="name" (sort)="onSort($event)">Name</th>
                   <th sortable="namespace" class="stsrm"  (sort)="onSort($event)">Namespace</th>
                    <th sortable="lebels" class="stsrm"  (sort)="onSort($event)">Lebels</th>
-                  <th sortable="endpoints" class="stsrm"  (sort)="onSort($event)">Endpoints</th>
+                  <th sortable="pods" class="stsrm"  (sort)="onSort($event)">Pods</th>
                   <th sortable="age" (sort)="onSort($event)">Age</th>
+                  <th sortable="images" class="stsrm"  (sort)="onSort($event)">Images</th>
                 </tr>
               </thead>
               <tbody>
@@ -56,10 +57,13 @@
                     <ngb-highlight [result]="table.lebels" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                   <td>
-                    <ngb-highlight [result]="table.endpoints" [term]="service.searchTerm"></ngb-highlight>
+                    <ngb-highlight [result]="table.pods" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                   <td>
                     <ngb-highlight [result]="table.age" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                   <td>
+                    <ngb-highlight [result]="table.images" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                 </tr>
               </tbody>

@@ -20,6 +20,9 @@ import { DaemonsetsComponent } from './daemonsets/daemonsets.component';
 import { IngressesComponent } from './ingresses/ingresses.component';
 import { ServicesComponent } from './services/services.component';
 import { ServicesdetailsComponent } from './servicesdetails/servicesdetails.component';
+import { ConfigmapsComponent } from './configmaps/configmaps.component';
+import { PersistentvalumeComponent } from './persistentvalume/persistentvalume.component';
+import { SecretsComponent } from './secrets/secrets.component';
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' },
   { path: 'dashboard', component: DefaultComponent },
@@ -39,6 +42,10 @@ const routes: Routes = [
   { path: 'discovery/ingresses', component: IngressesComponent },
   { path: 'discovery/services', component: ServicesComponent },
   { path: 'discovery/services/details', component: ServicesdetailsComponent },
+  { path: 'config/configmaps', component: ConfigmapsComponent },
+  { path: 'config/persistentvalume', component: PersistentvalumeComponent },
+  { path: 'config/secrets', component: SecretsComponent },
+
   { path: 'calendar', component: CalendarComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'dashboards', loadChildren: () => import('./dashboards/dashboards.module').then(m => m.DashboardsModule) },

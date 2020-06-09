@@ -1,10 +1,11 @@
 // Table data
 export interface Table {
     name: string;
-    node:string;
-    status: string;
-    restarts: string;
-    age:string;
+    namespace:string;
+    lebels: string;
+    pods: string;
+    age: string;
+    images:string;
 }
 
 // Search Data

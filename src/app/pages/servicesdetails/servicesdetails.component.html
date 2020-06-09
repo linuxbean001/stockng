@@ -1,7 +1,7 @@
 <div class="container-fluid">
 
   <!-- start page title -->
- <app-page-title title="DISCOVERY BALANCING SERVICES" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+ <app-page-title title="DISCOVERY AND LOAD BALANCING SERVICES" [breadcrumbItems]="breadCrumbItems"></app-page-title>
 
 
   <!-- end page title -->
@@ -19,11 +19,138 @@
           </div>
           <hr>
           <div class="row">
-            <div class="col-12">
-             <!--  <address>
-                <strong>Name:</strong><span class="badge badge-soft-primary font-size-11 m-1">beta:kubernetes.io/arch:amd64</span> <span class="badge badge-soft-primary font-size-11 m-1">beta:kubernetes.io/instance-type:nl</span><span class="badge badge-soft-primary font-size-11 m-1"> beta:kubernetes.io/os:linux </span><span class="badge badge-soft-primary font-size-11 m-1">failure-domain.beta.kubernetes.io/re...</span><span class="badge badge-soft-primary font-size-11 m-1"> failure-domain.beta.kubernetes.io/z...</span>
-              </address>
-              <address>
+             <div class="col-2">
+               <address >
+                <strong >Name:</strong>
+               </address>
+             </div>
+              <div class="col-4">
+               <address >
+                <span >wordpress</span>
+               </address>
+             </div>
+              <div class="col-2">
+               <address >
+                <strong >Connection:</strong>
+               </address>
+             </div>
+              <div class="col-4">
+               <address >
+                <span></span>
+               </address>
+             </div>
+
+
+              <div class="col-2">
+               <address >
+                <strong >Namespace:</strong>
+               </address>
+             </div>
+              <div class="col-4">
+               <address >
+                <span >default</span>
+               </address>
+             </div>
+              <div class="col-2">
+               <address >
+                <strong >Cluster IP:</strong>
+               </address>
+             </div>
+              <div class="col-4">
+               <address >
+                <span>100.69.148.244</span>
+               </address>
+             </div>
+
+
+             <div class="col-2">
+               <address >
+                <strong >Labels:</strong>
+               </address>
+             </div>
+              <div class="col-4">
+               <address >
+                <span >app:wordpress</span>
+               </address>
+             </div>
+              <div class="col-2">
+               <address >
+                <strong >Internal endpoints:</strong>
+               </address>
+             </div>
+              <div class="col-4">
+               <address >
+                <span>wordpress:80 TCP <br> wordpress:30692 TCP</span>
+               </address>
+             </div>
+
+             <div class="col-2">
+               <address >
+                <strong >Creation Time:</strong>
+               </address>
+             </div>
+              <div class="col-4">
+               <address >
+                <span >2019-04-03T12:19 UTC</span>
+               </address>
+             </div>
+              <div class="col-2">
+               <address >
+                <strong >External endpoints:</strong>
+               </address>
+             </div>
+              <div class="col-4 text-primary">
+               <address >
+                <span>35.238.197.219:80</span>
+               </address>
+             </div>
+
+
+               <div class="col-2">
+               <address >
+                <strong >Label selector:</strong>
+               </address>
+             </div>
+              <div class="col-4">
+               <address >
+                <span >app:wordpress</span>
+               </address>
+             </div>
+              <div class="col-6">
+              
+             </div>
+
+              <div class="col-2">
+               <address >
+                <strong >Type:</strong>
+               </address>
+             </div>
+              <div class="col-4">
+               <address >
+                <span >LoadBalancer</span>
+               </address>
+             </div>
+              <div class="col-6">
+            
+             </div>
+
+             <div class="col-2">
+               <address >
+                <strong >Session Affinity:</strong>
+               </address>
+             </div>
+              <div class="col-4">
+               <address >
+                <span >None</span>
+               </address>
+             </div>
+              <div class="col-6">
+            
+             </div>
+
+
+
+            <!--  <address>
                 <strong>Labels:</strong> <span class="badge badge-soft-primary font-size-11 m-1">node.alpha.kubernetes.io/ttl:0 </span><span class="badge badge-soft-primary font-size-11 m-1"> valumes.kubernetes.io/controller-managed-attach-detach: true</span>
               </address>
               <address>
@@ -78,7 +205,7 @@
                 <strong>Architecture:</strong> amd64
               </address> -->
 
-            </div>        
+                  
           </div>
         
         <!--   <div class="py-2 mt-3">
@@ -144,7 +271,40 @@
 
 </div> <!-- container-fluid -->
 
+<div class="container-fluid">
+<div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">EndPoints</h4>
+          <div class="table-responsive">
+            <table class="table mb-0">
+              <thead>
+                <tr>
+                  <th>Host</th>
+                  <th>Ports(Name,Port,Protocol)</th>
+                  <th>Node</th>
+                  <th>Status</th>
+                  <th>Restarts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>                 
+                  <td>100.96.2.10</td>
+                  <td>80,TCP </td>
+                  <td>nodes-lq4c</td>
+                  <td>Runnging</td>
+                  <td>0</td>
+                </tr>         
+              </tbody>
+            </table>
+          </div>
 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="container-fluid">
  
@@ -152,7 +312,7 @@
     <div class="col-12">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">Services Details</h4>
+          <h4 class="card-title">Pods</h4>
          <!--  <p class="card-sub-title">
             Example of datatable.
           </p> -->
@@ -185,11 +345,9 @@
               <thead>
                 <tr>
                   <th sortable="name" (sort)="onSort($event)">Name</th>
-                  <th sortable="namespace" class="stsrm"  (sort)="onSort($event)">Namespace</th>
-                   <th sortable="lebels" class="stsrm"  (sort)="onSort($event)">Lebels</th>
-                  <th sortable="clusterip" class="stsrm"  (sort)="onSort($event)">ClusterIp</th>
-                  <th sortable="internalendpoints" (sort)="onSort($event)">InternalEndpoints</th>
-                  <th sortable="externalendpoints" class="stsrm"  (sort)="onSort($event)">ExternalEndpoints</th>
+                  <th sortable="node" class="stsrm"  (sort)="onSort($event)">Node</th>
+                   <th sortable="status" class="stsrm"  (sort)="onSort($event)">Status</th>
+                  <th sortable="restarts" class="stsrm"  (sort)="onSort($event)">Restarts</th>
                   <th sortable="age" (sort)="onSort($event)">Age</th>
                   <th>Action</th>
                 </tr>
@@ -201,19 +359,13 @@
                     <ngb-highlight class="text-primary" [result]="table.name" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                   <td>
-                    <ngb-highlight [result]="table.namespace" [term]="service.searchTerm"></ngb-highlight>
+                    <ngb-highlight [result]="table.node" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                    <td>
-                    <ngb-highlight [result]="table.lebels" [term]="service.searchTerm"></ngb-highlight>
+                    <ngb-highlight [result]="table.status" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                   <td>
-                    <ngb-highlight [result]="table.clusterip" [term]="service.searchTerm"></ngb-highlight>
-                  </td>
-                  <td>
-                    <ngb-highlight [result]="table.internalendpoints" [term]="service.searchTerm"></ngb-highlight>
-                  </td>
-                   <td>
-                    <ngb-highlight [result]="table.externalendpoints" [term]="service.searchTerm"></ngb-highlight>
+                    <ngb-highlight [result]="table.restarts" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                    <td>
                     <ngb-highlight [result]="table.age" [term]="service.searchTerm"></ngb-highlight>
@@ -256,6 +408,43 @@
             </div>
             <!-- End Pagination -->
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+<div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Events</h4>
+          <div class="table-responsive">
+            <table class="table mb-0">
+              <thead>
+                <tr>
+                  <th>Message</th>
+                  <th>Source</th>
+                  <th>Sub-object</th>
+                  <th>Count</th>
+                  <th>FirstSeen</th>
+                  <th>LastSeen</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>                 
+                  <td>dummy data</td>
+                  <td>dummy</td>
+                  <td>dummy</td>
+                  <td>dummy</td>
+                  <td>dummy</td>
+                  <td>dummy</td>
+                </tr>         
+              </tbody>
+            </table>
+          </div>
+
         </div>
       </div>
     </div>

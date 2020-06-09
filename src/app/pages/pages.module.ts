@@ -68,13 +68,18 @@ import { ServicesComponent } from './services/services.component';
 import { ServicesSortableDirective } from './services/services-sortable.directive';
 import { ServicesdetailsComponent } from './servicesdetails/servicesdetails.component';
 import { ServicesdetailsSortableDirective } from './servicesdetails/servicesdetails-sortable.directive';
+import { ConfigmapsComponent } from './configmaps/configmaps.component';
+import { ConfigmapsSortableDirective } from './configmaps/configmaps-sortable.directive';
+
+import { PersistentvalumeComponent } from './persistentvalume/persistentvalume.component';
+import { SecretsComponent } from './secrets/secrets.component';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
   wheelSpeed: 0.3
 };
 
 @NgModule({
-  declarations: [CalendarComponent, ChatComponent, ContainerregistryComponent, NamespacesComponent, NodesComponent,AdvancedSortableDirective,NodesSortableDirective, NodesdetailsComponent,RolesSortableDirective,StorageclassesSortableDirective, RolesComponent, PersistentComponent,PersistentSortableDirective, StorageclassesComponent, DevelopmentsComponent, ReplicasetsComponent,ReplicasetsSortableDirective,DevelopmentsSortableDirective, PodsComponent,PodsSortableDirective, ReplicationComponent,ReplicationSortableDirective, JobsComponent, DaemonsetsComponent,DaemonsetsSortableDirective, IngressesComponent,IngressesSortableDirective, ServicesComponent,ServicesSortableDirective, ServicesdetailsComponent,ServicesdetailsSortableDirective,],
+  declarations: [CalendarComponent, ChatComponent, ContainerregistryComponent, NamespacesComponent, NodesComponent,AdvancedSortableDirective,NodesSortableDirective, NodesdetailsComponent,RolesSortableDirective,StorageclassesSortableDirective, RolesComponent, PersistentComponent,PersistentSortableDirective, StorageclassesComponent, DevelopmentsComponent, ReplicasetsComponent,ReplicasetsSortableDirective,DevelopmentsSortableDirective, PodsComponent,PodsSortableDirective, ReplicationComponent,ReplicationSortableDirective, JobsComponent, DaemonsetsComponent,DaemonsetsSortableDirective, IngressesComponent,IngressesSortableDirective, ServicesComponent,ServicesSortableDirective, ServicesdetailsComponent,ServicesdetailsSortableDirective, ConfigmapsComponent,ConfigmapsSortableDirective, PersistentvalumeComponent, SecretsComponent,],
   imports: [
     CommonModule,
     FormsModule,

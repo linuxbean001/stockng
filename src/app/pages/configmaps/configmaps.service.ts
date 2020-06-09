@@ -4,11 +4,11 @@ import { DecimalPipe } from '@angular/common';
 import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 import { debounceTime, delay, switchMap, tap } from 'rxjs/operators';
 
-import { Table, SearchResult } from './servicesdetails.model';
+import { Table, SearchResult } from './configmaps.model';
 
 import { tableData } from './data';
 
-import { SortDirection } from './servicesdetails-sortable.directive';
+import { SortDirection } from './configmaps-sortable.directive';
 
 interface State {
     page: number;
@@ -49,17 +49,19 @@ function sort(tables: Table[], column: string, direction: string): Table[] {
  */
 function matches(tables: Table, term: string, pipe: PipeTransform) {
     return tables.name.toLowerCase().includes(term)
-        || tables.node.toLowerCase().includes(term)
-        || tables.status.toLowerCase().includes(term)
-        || tables.restarts.toLowerCase().includes(term)
-        || tables.age.toLowerCase().includes(term);
+        || tables.namespace.toLowerCase().includes(term)
+        || tables.lebels.toLowerCase().includes(term)
+        || tables.pods.toLowerCase().includes(term)
+        || tables.age.toLowerCase().includes(term)
+        || tables.images.toLowerCase().includes(term);
+        
 }
 
 @Injectable({
     providedIn: 'root'
-}) 
+})
 
-export class ServicesdetailsService {
+export class ConfigmapsService {
     // tslint:disable-next-line: variable-name
     private _loading$ = new BehaviorSubject<boolean>(true);
     // tslint:disable-next-line: variable-name
