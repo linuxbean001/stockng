@@ -40,9 +40,7 @@
                   <th sortable="name" (sort)="onSort($event)">Name</th>
                   <th sortable="namespace" class="stsrm"  (sort)="onSort($event)">Namespace</th>
                    <th sortable="lebels" class="stsrm"  (sort)="onSort($event)">Lebels</th>
-                  <th sortable="pods" class="stsrm"  (sort)="onSort($event)">Pods</th>
                   <th sortable="age" (sort)="onSort($event)">Age</th>
-                  <th sortable="images" class="stsrm"  (sort)="onSort($event)">Images</th>
                 </tr>
               </thead>
               <tbody>
@@ -57,13 +55,7 @@
                     <ngb-highlight [result]="table.lebels" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                   <td>
-                    <ngb-highlight [result]="table.pods" [term]="service.searchTerm"></ngb-highlight>
-                  </td>
-                  <td>
                     <ngb-highlight [result]="table.age" [term]="service.searchTerm"></ngb-highlight>
-                  </td>
-                   <td>
-                    <ngb-highlight [result]="table.images" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                 </tr>
               </tbody>

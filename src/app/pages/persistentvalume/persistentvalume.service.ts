@@ -4,11 +4,11 @@ import { DecimalPipe } from '@angular/common';
 import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 import { debounceTime, delay, switchMap, tap } from 'rxjs/operators';
 
-import { Table, SearchResult } from './configmaps.model';
+import { Table, SearchResult } from './persistentvalume.model';
 
 import { tableData } from './data';
 
-import { SortDirection } from './configmaps-sortable.directive';
+import { SortDirection } from './persistentvalume-sortable.directive';
 
 interface State {
     page: number;
@@ -59,7 +59,7 @@ function matches(tables: Table, term: string, pipe: PipeTransform) {
     providedIn: 'root'
 })
 
-export class ConfigmapsService {
+export class PersistentvalumeService {
     // tslint:disable-next-line: variable-name
     private _loading$ = new BehaviorSubject<boolean>(true);
     // tslint:disable-next-line: variable-name

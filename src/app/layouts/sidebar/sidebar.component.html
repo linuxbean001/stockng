@@ -9,7 +9,7 @@
       <ng-container *ngFor="let item of menuItems">
         <li class="menu-title" *ngIf="item.isTitle">{{ item.label }}</li>
         <!-- Layouts menu -->
-      <!--   <li *ngIf="item.isLayout">
+        <li *ngIf="item.isLayout">
           <a href="javascript: void(0);" routerLink="/dashboard" routerLinkActive="active"  class="has-arrow">
             <i class="bx bx-layout"></i>
             <span>Computes</span>
@@ -19,8 +19,8 @@
           <li><a routerLink="/" routerLinkActive="mm-active"  href="javascript: void(0);">List Of PRODS</a></li>
           <li><a routerLink="/" routerLinkActive="mm-active"  href="javascript: void(0);">Deployed PRODS</a></li>
           </ul>
-        </li> -->
-       <!--   <li *ngIf="item.isLayout">
+        </li>
+         <li *ngIf="item.isLayout">
           <a href="javascript: void(0);" class="has-arrow">
             <i class="bx bx-layout"></i>
             <span>Layouts</span>
@@ -33,7 +33,7 @@
             <li><a (click)="boxedLayout()" href="javascript: void(0);">Boxed Layout</a></li>
             <li><a (click)="coloredSidebar()" href="javascript: void(0);">Colored Sidebar</a></li>
           </ul>
-        </li> -->
+        </li>
 
         
         <!-- end Layout menu -->
