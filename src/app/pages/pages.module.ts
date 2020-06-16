@@ -73,6 +73,7 @@ import { ConfigmapsSortableDirective } from './configmaps/configmaps-sortable.di
 
 import { PersistentvalumeComponent } from './persistentvalume/persistentvalume.component';
 import { SecretsComponent } from './secrets/secrets.component';
+import { SecretsSortableDirective } from './secrets/secrets-sortable.directive';
 import { PersistentvalumeSortableDirective } from './persistentvalume/persistentvalume-sortable.directive';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -81,7 +82,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 };
 
 @NgModule({
-  declarations: [CalendarComponent, ChatComponent, ContainerregistryComponent, NamespacesComponent, NodesComponent,AdvancedSortableDirective,NodesSortableDirective, NodesdetailsComponent,RolesSortableDirective,StorageclassesSortableDirective, RolesComponent, PersistentComponent,PersistentSortableDirective, StorageclassesComponent, DevelopmentsComponent, ReplicasetsComponent,ReplicasetsSortableDirective,DevelopmentsSortableDirective, PodsComponent,PodsSortableDirective, ReplicationComponent,ReplicationSortableDirective, JobsComponent, DaemonsetsComponent,DaemonsetsSortableDirective, IngressesComponent,IngressesSortableDirective, ServicesComponent,ServicesSortableDirective, ServicesdetailsComponent,ServicesdetailsSortableDirective, ConfigmapsComponent,ConfigmapsSortableDirective, PersistentvalumeComponent,PersistentvalumeSortableDirective, SecretsComponent,],
+  declarations: [CalendarComponent, ChatComponent, ContainerregistryComponent, NamespacesComponent, NodesComponent,AdvancedSortableDirective,NodesSortableDirective, NodesdetailsComponent,RolesSortableDirective,StorageclassesSortableDirective, RolesComponent, PersistentComponent,PersistentSortableDirective, StorageclassesComponent, DevelopmentsComponent, ReplicasetsComponent,ReplicasetsSortableDirective,DevelopmentsSortableDirective, PodsComponent,PodsSortableDirective, ReplicationComponent,ReplicationSortableDirective, JobsComponent, DaemonsetsComponent,DaemonsetsSortableDirective, IngressesComponent,IngressesSortableDirective, ServicesComponent,ServicesSortableDirective, ServicesdetailsComponent,ServicesdetailsSortableDirective, ConfigmapsComponent,ConfigmapsSortableDirective, PersistentvalumeComponent,PersistentvalumeSortableDirective, SecretsComponent,SecretsSortableDirective,],
   imports: [
     CommonModule,
     FormsModule,

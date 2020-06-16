@@ -1,11 +1,9 @@
 // Table data
 export interface Table {
     name: string;
-    status:string;
-    volume: string;
-    capacity:string;
-    accessmodels:string;
-    storageclass:string;
+    namespace:string;
+    lebels: string;
+    type:string;
     age: string;
 }
 

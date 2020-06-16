@@ -5,7 +5,7 @@
     <div class="col-12">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">Config Maps</h4>
+          <h4 class="card-title">Persistent Valume Claims</h4>
          <!--  <p class="card-sub-title">
             Example of datatable.
           </p> -->
@@ -38,21 +38,34 @@
               <thead>
                 <tr>
                   <th sortable="name" (sort)="onSort($event)">Name</th>
-                  <th sortable="namespace" class="stsrm"  (sort)="onSort($event)">Namespace</th>
-                   <th sortable="lebels" class="stsrm"  (sort)="onSort($event)">Lebels</th>
+                  <th sortable="status" class="stsrm"  (sort)="onSort($event)">Status</th>
+                   <th sortable="volume" class="stsrm"  (sort)="onSort($event)">Volume</th>
+                   <th sortable="capacity" class="stsrm"  (sort)="onSort($event)">Capacity</th>
+                   <th sortable="accessmodels" class="stsrm"  (sort)="onSort($event)">AccessModels</th>
+                   <th sortable="storageclass" class="stsrm"  (sort)="onSort($event)">StorageClass</th>
                   <th sortable="age" (sort)="onSort($event)">Age</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let table of tables$ | async">
                   <td>
-                    <ngb-highlight [result]="table.name" [term]="service.searchTerm"></ngb-highlight>
+                    <i class="far fa-check-square"></i>&nbsp;
+                    <ngb-highlight routerLink="/config/persistentvalume/details" routerLinkActive="active" class="text-primary" [result]="table.name" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                   <td>
-                    <ngb-highlight [result]="table.namespace" [term]="service.searchTerm"></ngb-highlight>
+                    <ngb-highlight [result]="table.status" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                    <td>
-                    <ngb-highlight [result]="table.lebels" [term]="service.searchTerm"></ngb-highlight>
+                    <ngb-highlight [result]="table.volume" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                   <td>
+                    <ngb-highlight [result]="table.capacity" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                   <td>
+                    <ngb-highlight [result]="table.accessmodels" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                   <td>
+                    <ngb-highlight [result]="table.storageclass" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                   <td>
                     <ngb-highlight [result]="table.age" [term]="service.searchTerm"></ngb-highlight>

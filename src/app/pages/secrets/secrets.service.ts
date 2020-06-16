@@ -4,11 +4,11 @@ import { DecimalPipe } from '@angular/common';
 import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 import { debounceTime, delay, switchMap, tap } from 'rxjs/operators';
 
-import { Table, SearchResult } from './persistentvalume.model';
+import { Table, SearchResult } from './secrets.model';
 
 import { tableData } from './data';
 
-import { SortDirection } from './persistentvalume-sortable.directive';
+import { SortDirection } from './secrets-sortable.directive';
 
 interface State {
     page: number;
@@ -49,19 +49,18 @@ function sort(tables: Table[], column: string, direction: string): Table[] {
  */
 function matches(tables: Table, term: string, pipe: PipeTransform) {
     return tables.name.toLowerCase().includes(term)
-        || tables.status.toLowerCase().includes(term)
-        || tables.volume.toLowerCase().includes(term)
-        || tables.capacity.toLowerCase().includes(term)
-        || tables.accessmodels.toLowerCase().includes(term)
-        || tables.storageclass.toLowerCase().includes(term)
-        || tables.age.toLowerCase().includes(term);      
+        || tables.namespace.toLowerCase().includes(term)
+        || tables.lebels.toLowerCase().includes(term)
+        || tables.type.toLowerCase().includes(term)
+        || tables.age.toLowerCase().includes(term);
+        
 }
 
 @Injectable({
     providedIn: 'root'
 })
 
-export class PersistentvalumeService {
+export class SecretsService {
     // tslint:disable-next-line: variable-name
     private _loading$ = new BehaviorSubject<boolean>(true);
     // tslint:disable-next-line: variable-name
