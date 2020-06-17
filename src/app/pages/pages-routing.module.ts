@@ -23,6 +23,7 @@ import { ServicesdetailsComponent } from './servicesdetails/servicesdetails.comp
 import { ConfigmapsComponent } from './configmaps/configmaps.component';
 import { PersistentvalumeComponent } from './persistentvalume/persistentvalume.component';
 import { SecretsComponent } from './secrets/secrets.component';
+import { PersistentvalumedetailsComponent } from './persistentvalumedetails/persistentvalumedetails.component';
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' },
   { path: 'dashboard', component: DefaultComponent },
@@ -44,6 +45,7 @@ const routes: Routes = [
   { path: 'discovery/services/details', component: ServicesdetailsComponent },
   { path: 'config/configmaps', component: ConfigmapsComponent },
   { path: 'config/persistentvalume', component: PersistentvalumeComponent },
+  { path: 'config/persistentvalume/details', component: PersistentvalumedetailsComponent },
   { path: 'config/secrets', component: SecretsComponent },
 
   { path: 'calendar', component: CalendarComponent },
