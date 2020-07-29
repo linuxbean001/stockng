@@ -1,10 +1,11 @@
 // Table data
 export interface Table {
-    name: string;
-    lebels: string;
-    status: string;
-    age: string;
+    namespace: string;
+    environ: string;
+    created: string;
+    loca: string;
 }
+
 
 // Search Data
 export interface SearchResult {

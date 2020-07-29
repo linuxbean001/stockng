@@ -1,80 +1,25 @@
 const tableData = [
   {
-    name: 'development',
-    lebels: 'name:development',
-    status: 'active',
-    age: '6 minutes'
+    namespace: 'Namespace1',
+    environ: 'Staging',
+    created: 'June 4',
+    loca: 'GCP'
   }, {
-    name: 'Kube-public',
-    lebels: '',
-    status: 'active',
-    age: '6 minutes'
+    namespace: 'ProdNamesp',
+    environ: 'Production',
+    created: 'May 20',
+    loca: 'Azure'
   }, {
-    name: 'production',
-    lebels: 'name:production',
-    status: 'active',
-    age: '7 minutes'
+    namespace: 'Mariah',
+    environ: 'TestDev',
+    created: 'May 29',
+    loca: 'AWS'
   }, {
-    name: 'kube-system',
-    lebels: '',
-    status: 'active',
-    age: '7 minutes'
-  }, {
-    name: 'default',
-    lebels: '',
-    status: 'active',
-    age: '7 minutes'
-  },{
-    name: 'development',
-    lebels: 'name:development',
-    status: 'active',
-    age: '6 minutes'
-  }, {
-    name: 'Kube-public',
-    lebels: '',
-    status: 'active',
-    age: '6 minutes'
-  }, {
-    name: 'production',
-    lebels: 'name:production',
-    status: 'active',
-    age: '7 minutes'
-  }, {
-    name: 'kube-system',
-    lebels: '',
-    status: 'active',
-    age: '7 minutes'
-  }, {
-    name: 'default',
-    lebels: '',
-    status: 'active',
-    age: '7 minutes'
-  },{
-    name: 'development',
-    lebels: 'name:development',
-    status: 'active',
-    age: '6 minutes'
-  }, {
-    name: 'Kube-public',
-    lebels: '',
-    status: 'active',
-    age: '6 minutes'
-  }, {
-    name: 'production',
-    lebels: 'name:production',
-    status: 'active',
-    age: '7 minutes'
-  }, {
-    name: 'kube-system',
-    lebels: '',
-    status: 'active',
-    age: '7 minutes'
-  }, {
-    name: 'default',
-    lebels: '',
-    status: 'active',
-    age: '7 minutes'
-  },
+    namespace: 'Valerie',
+    environ: 'TestDev',
+    created: 'Jun 1',
+    loca: 'CD1'
+  }
 ];
 
 export { tableData };

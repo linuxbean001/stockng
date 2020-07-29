@@ -1,11 +1,11 @@
 <div class="container-fluid">
-  <app-page-title title="CLUSTER" [breadcrumbItems]="breadCrumbItems"></app-page-title>
-
+  <app-page-title title="Namespaces" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+<div class="test-rightbtn"><button type="button" class="btn btn-primary ">Request a Namespace</button></div>
   <div class="row">
     <div class="col-12">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">Namespaces</h4>
+          <h4 class="card-title">List</h4>
          <!--  <p class="card-sub-title">
             Example of datatable.
           </p> -->
@@ -37,26 +37,26 @@
               class="table table-bordered dt-responsive nowrap datatables no-footer dtr-inline">
               <thead>
                 <tr>
-                  <th sortable="name" (sort)="onSort($event)">Name</th>
-                  <th sortable="lebels" class="stsrm"  (sort)="onSort($event)">Lebels</th>
-                  <th sortable="status" class="stsrm"  (sort)="onSort($event)">Status</th>
-                  <th sortable="age" (sort)="onSort($event)">Age</th>
+                  <th sortable="namespace" (sort)="onSort($event)">Namespaces</th>
+                  <th sortable="environ" class="stsrm"  (sort)="onSort($event)">Environ</th>
+                  <th sortable="created" class="stsrm"  (sort)="onSort($event)">Created</th>
+                  <th sortable="loca" (sort)="onSort($event)">Loca</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let table of tables$ | async">
                   <td>
                   	 <i class="far fa-check-square"></i>&nbsp; 
-                    <ngb-highlight class="text-primary" [result]="table.name" [term]="service.searchTerm"></ngb-highlight>
+                    <ngb-highlight class="text-primary" [result]="table.namespace" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                   <td>
-                    <ngb-highlight [result]="table.lebels" [term]="service.searchTerm"></ngb-highlight>
+                    <ngb-highlight [result]="table.environ" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                   <td>
-                    <ngb-highlight [result]="table.status" [term]="service.searchTerm"></ngb-highlight>
+                    <ngb-highlight [result]="table.created" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                   <td>
-                    <ngb-highlight [result]="table.age" [term]="service.searchTerm"></ngb-highlight>
+                    <ngb-highlight [result]="table.loca" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                 </tr>
               </tbody>

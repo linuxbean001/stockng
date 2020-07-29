@@ -24,11 +24,15 @@ import { ConfigmapsComponent } from './configmaps/configmaps.component';
 import { PersistentvalumeComponent } from './persistentvalume/persistentvalume.component';
 import { SecretsComponent } from './secrets/secrets.component';
 import { PersistentvalumedetailsComponent } from './persistentvalumedetails/persistentvalumedetails.component';
+import { BudashboardComponent } from './budashboard/budashboard.component';
+import { AuthGuard } from '../core/guards/auth.guard';
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' },
-  { path: 'dashboard', component: DefaultComponent },
+  { path: 'dashboard', component: BudashboardComponent,canActivate: [AuthGuard]},
+  { path: 'budashboard', component: BudashboardComponent },
   { path: 'containerregistry', component: ContainerregistryComponent },
   { path: 'cluster/namespaces', component: NamespacesComponent },
+  { path: 'namespaces', component: NamespacesComponent },
   { path: 'cluster/nodes', component: NodesComponent },
   { path: 'cluster/nodes/details', component: NodesdetailsComponent },
   { path: 'cluster/roles', component: RolesComponent },

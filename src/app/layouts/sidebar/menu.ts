@@ -1,5 +1,102 @@
 import { MenuItem } from './menu.model';
 
+
+
+export const BUMENU: MenuItem[] = [
+    {
+        id: 1,
+        label: 'Menu',
+        isTitle: true
+    },
+     {
+        id: 2,
+        label: 'Dashboards',
+        icon: 'bx bx-home-circle',
+        link: '/budashboard',
+    },{
+        id: 3,
+        label: 'Alerts',
+        icon: 'bx bx-arrow-to-top',
+        link: '/',
+    },{
+        id: 4,
+        label: 'Cluster',
+        icon: 'bx bx-planet',
+        link: '/cluster',
+    },{
+        id: 5,
+        label: 'Reports',
+        icon: 'bx bx-receipt',
+        link: '/reports',
+    },{
+         id: 6,
+          label: 'Namespaces',
+          icon: 'bx bx-baseball',
+          // badge: {
+           // variant: 'info',
+           // text: '03',
+          // },
+          subItems: [
+            {
+                id: 1,
+                label: 'List',
+                link: '/namespaces',
+                parentId: 6
+            },
+             {
+                id: 2,
+                label: 'User',
+                link: '/',
+                parentId: 6
+            },
+            {
+               id: 2,
+                label: 'Quota',
+                link: '/',
+               parentId: 6
+            }
+        ]
+    },{
+         id: 7,
+          label: 'Container Registry',
+          icon: 'bx bx-arrow-to-left',
+          // badge: {
+           // variant: 'info',
+           // text: '03',
+          // },
+          subItems: [
+            {
+                id: 1,
+                label: 'Report',
+                link: '/',
+                parentId: 7
+            }
+        ]
+    },{
+        id: 8,
+        label: 'Persistent Volumes',
+        icon: 'bx bx-badge',
+        link: '/persistent',
+    },{
+        id: 9,
+        label: 'Users',
+        icon: 'bx bx-user-circle',
+        link: '/users',
+    },{
+        id: 10,
+        label: 'Workloads',
+        icon: 'bx bx-sticker',
+        link: '/Workloads',
+    }
+];
+
+
+
+
+
+
+
+
 export const MENU: MenuItem[] = [
     {
         id: 1,
@@ -12,7 +109,7 @@ export const MENU: MenuItem[] = [
         icon: 'bx-home-circle',
         link: '/dashboard',
     },
-        // {
+      // {
         // id: 2,
         //  label: 'Dashboards',
         //  icon: 'bx-home-circle',
