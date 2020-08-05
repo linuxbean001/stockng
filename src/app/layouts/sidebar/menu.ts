@@ -40,13 +40,13 @@ export const BUMENU: MenuItem[] = [
             {
                 id: 1,
                 label: 'List',
-                link: '/namespaces',
+                link: '/namespaces/list',
                 parentId: 6
             },
              {
                 id: 2,
                 label: 'User',
-                link: '/',
+                link: '/namespaces/user',
                 parentId: 6
             },
             {

@@ -1,0 +1,149 @@
+<div class="container-fluid">
+  <app-page-title title="Namespaces User" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+<!-- <div class="test-rightbtn"><button type="button" class="btn btn-primary ">Request a Namespace</button></div> -->
+  <div class="row">
+<div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">User</h4>
+          <ul ngbNav #justifiednav="ngbNav" [activeId]="1" class="nav-pills nav-justified">
+            <li [ngbNavItem]="1">
+              <a ngbNavLink>
+                <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+                <span class="d-none d-sm-block">General</span>
+              </a>
+              <ng-template ngbNavContent>
+                <ng-template [ngTemplateOutlet]="genContent"></ng-template>
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="2">
+              <a ngbNavLink>
+                <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+                <span class="d-none d-sm-block">Users</span>
+              </a>
+              <ng-template ngbNavContent>
+                <ng-template [ngTemplateOutlet]="userContent"></ng-template>
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="3">
+              <a ngbNavLink>
+                <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
+                <span class="d-none d-sm-block">Add User</span>
+              </a>
+              <ng-template ngbNavContent>
+                <ng-template [ngTemplateOutlet]="addContent"></ng-template>
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="4">
+              <a ngbNavLink>
+                <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
+                <span class="d-none d-sm-block">Remove User</span>
+              </a>
+              <ng-template ngbNavContent>
+                <ng-template [ngTemplateOutlet]="removeContent"></ng-template>
+              </ng-template>
+            </li>
+          </ul>
+          <div [ngbNavOutlet]="justifiednav"></div>
+        </div>
+      </div>
+    </div><!-- End Justified Tabs -->
+  
+  </div>
+</div>
+
+<!-- Tab Content -->
+  <ng-template #genContent>
+  	<p class="p-3 mb-0">
+     General
+    </p>
+  </ng-template>
+
+  <!-- Tab Content -->
+  <ng-template #userContent>
+    <div class="col-12">
+     
+          <div class="row mb-md-2">
+            <!-- <div class="col-sm-12 col-md-6">
+              <div class="dataTables_length" id="tickets-table_length"><label
+                  class="d-inline-flex align-items-center">Show
+                  <select name="tickets-table_length" aria-controls="tickets-table" name="pageSize"
+                    [(ngModel)]="service.pageSize"
+                    class="custom-select custom-select-sm form-control form-control-sm mx-2">
+                    <option [ngValue]="10">10</option>
+                    <option [ngValue]="25">25</option>
+                    <option [ngValue]="50">50</option>
+                    <option [ngValue]="100">100</option>
+                  </select> entries</label></div>
+            </div> -->
+            <!-- Search -->
+            <div class="col-sm-12 col-md-12">
+              <div id="tickets-table_filter" class="dataTables_filter text-md-right"><label
+                  class="d-inline-flex align-items-center">Search:
+                  <input type="text" name="searchTerm" class="form-control form-control-sm ml-2"
+                    aria-controls="tickets-table" [(ngModel)]="service.searchTerm"></label></div>
+            </div>
+            <!-- End search -->
+          </div>
+          <!-- Table -->
+          <div class="table-responsive">
+            <table id="basic-datatable"
+              class="table table-bordered dt-responsive nowrap datatables no-footer dtr-inline">
+              <thead>
+                <tr>
+                  <th sortable="usergroup" (sort)="onSort($event)">User Group</th>
+                 <th sortable="addeddate" class="stsrm"  (sort)="onSort($event)">Added Date</th>
+                  <th sortable="role" class="stsrm"  (sort)="onSort($event)">Role</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let table of tables$ | async">
+                  <td>
+                    <ngb-highlight class="text-primary" [result]="table.usergroup" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.addeddate" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.role" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- End table -->
+          <div class="row justify-content-md-between align-items-md-center mt-2">
+            <div class="col-sm-12 col-md-5">
+              <div class="dataTables_info mb-2" id="tickets-table_info" role="status" aria-live="polite">Showing
+                {{service.startIndex}} to
+                {{service.endIndex}} of {{service.totalRecords}}
+                entries
+              </div>
+            </div>
+            <!-- Pagination -->
+            <div class="col-sm-12 col-md-5">
+              <div class="text-md-right float-md-right pagination-rounded">
+                <ngb-pagination [collectionSize]="total$ | async" [(page)]="service.page" [pageSize]="service.pageSize">
+                </ngb-pagination>
+              </div>
+            </div>
+            <!-- End Pagination -->
+          </div>
+
+        </div>
+     
+  </ng-template>
+
+   <!-- Tab Content -->
+  <ng-template #addContent>
+    <p class="p-3 mb-0">
+     Add User
+    </p>
+  </ng-template>
+
+   <!-- Tab Content -->
+  <ng-template #removeContent>
+    <p class="p-3 mb-0">
+      Remove User
+    </p>
+  </ng-template>

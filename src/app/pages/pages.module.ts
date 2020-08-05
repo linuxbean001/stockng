@@ -77,6 +77,7 @@ import { SecretsSortableDirective } from './secrets/secrets-sortable.directive';
 import { PersistentvalumeSortableDirective } from './persistentvalume/persistentvalume-sortable.directive';
 import { PersistentvalumedetailsComponent } from './persistentvalumedetails/persistentvalumedetails.component';
 import { BudashboardComponent } from './budashboard/budashboard.component';
+import { NamespacesuserComponent } from './namespacesuser/namespacesuser.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -84,7 +85,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 };
 
 @NgModule({
-  declarations: [CalendarComponent, ChatComponent, ContainerregistryComponent, NamespacesComponent, NodesComponent,AdvancedSortableDirective,NodesSortableDirective, NodesdetailsComponent,RolesSortableDirective,StorageclassesSortableDirective, RolesComponent, PersistentComponent,PersistentSortableDirective, StorageclassesComponent, DevelopmentsComponent, ReplicasetsComponent,ReplicasetsSortableDirective,DevelopmentsSortableDirective, PodsComponent,PodsSortableDirective, ReplicationComponent,ReplicationSortableDirective, JobsComponent, DaemonsetsComponent,DaemonsetsSortableDirective, IngressesComponent,IngressesSortableDirective, ServicesComponent,ServicesSortableDirective, ServicesdetailsComponent,ServicesdetailsSortableDirective, ConfigmapsComponent,ConfigmapsSortableDirective, PersistentvalumeComponent,PersistentvalumeSortableDirective, SecretsComponent,SecretsSortableDirective, PersistentvalumedetailsComponent, BudashboardComponent,],
+  declarations: [CalendarComponent, ChatComponent, ContainerregistryComponent, NamespacesComponent, NodesComponent,AdvancedSortableDirective,NodesSortableDirective, NodesdetailsComponent,RolesSortableDirective,StorageclassesSortableDirective, RolesComponent, PersistentComponent,PersistentSortableDirective, StorageclassesComponent, DevelopmentsComponent, ReplicasetsComponent,ReplicasetsSortableDirective,DevelopmentsSortableDirective, PodsComponent,PodsSortableDirective, ReplicationComponent,ReplicationSortableDirective, JobsComponent, DaemonsetsComponent,DaemonsetsSortableDirective, IngressesComponent,IngressesSortableDirective, ServicesComponent,ServicesSortableDirective, ServicesdetailsComponent,ServicesdetailsSortableDirective, ConfigmapsComponent,ConfigmapsSortableDirective, PersistentvalumeComponent,PersistentvalumeSortableDirective, SecretsComponent,SecretsSortableDirective, PersistentvalumedetailsComponent, BudashboardComponent, NamespacesuserComponent,],
   imports: [
     CommonModule,
     FormsModule,
