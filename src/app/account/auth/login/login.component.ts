@@ -1,8 +1,8 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-import { AuthenticationService } from '../../../core/services/auth.service';
+import { first } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthenticationService } from '../../../core/services/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -18,16 +18,27 @@ export class LoginComponent implements OnInit, AfterViewInit {
   loginForm: FormGroup;
   submitted = false;
   error = '';
+  returnUrl: string;
 
   // set the currenr year
   year: number = new Date().getFullYear();
 
   // tslint:disable-next-line: max-line-length
-  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router, private authenticationService: AuthenticationService) { }
+  constructor(
+   private formBuilder: FormBuilder,
+   private route: ActivatedRoute, 
+   private router: Router,
+   private authenticationService: AuthenticationService) {
+
+      if (this.authenticationService.currentUserValue) { 
+            this.router.navigate(['/']);
+        }
+
+    }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', Validators.required],
       password: ['', Validators.required],
     });
 
@@ -52,11 +63,17 @@ export class LoginComponent implements OnInit, AfterViewInit {
       return;
     }
 
-    this.authenticationService.login(this.f.email.value, this.f.password.value).then((res: any) => {
-      this.router.navigate(['/dashboard']);
-    })
-      .catch(error => {
-        this.error = error ? error : '';
-      });
-  }
+   this.authenticationService.login(this.f.email.value, this.f.password.value)
+            .pipe(first())
+            .subscribe(
+                data => {
+
+                console.log('hello my response',data);
+                    this.router.navigate(['/dashboard']);
+                },
+                error => {
+                    this.error = error;
+                    //this.loading = false;
+                });
+    }
 }

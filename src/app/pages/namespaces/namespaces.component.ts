@@ -39,7 +39,8 @@ export class NamespacesComponent implements OnInit {
   }
   ngOnInit() {
 
-    this.breadCrumbItems = [{ label: 'Tables' }, { label: 'Cluster', active: true }];
+    //this.breadCrumbItems = [{ label: 'Tables' }, { label: 'Cluster', active: false }];
+    this.breadCrumbItems =[];
 
     /**
      * fetch data

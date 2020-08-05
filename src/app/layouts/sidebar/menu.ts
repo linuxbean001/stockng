@@ -1,5 +1,102 @@
 import { MenuItem } from './menu.model';
 
+
+
+export const BUMENU: MenuItem[] = [
+    {
+        id: 1,
+        label: 'Menu',
+        isTitle: true
+    },
+     {
+        id: 2,
+        label: 'Dashboards',
+        icon: 'bx bx-home-circle',
+        link: '/budashboard',
+    },{
+        id: 3,
+        label: 'Alerts',
+        icon: 'bx bx-arrow-to-top',
+        link: '/',
+    },{
+        id: 4,
+        label: 'Cluster',
+        icon: 'bx bx-planet',
+        link: '/cluster',
+    },{
+        id: 5,
+        label: 'Reports',
+        icon: 'bx bx-receipt',
+        link: '/reports',
+    },{
+         id: 6,
+          label: 'Namespaces',
+          icon: 'bx bx-baseball',
+          // badge: {
+           // variant: 'info',
+           // text: '03',
+          // },
+          subItems: [
+            {
+                id: 1,
+                label: 'List',
+                link: '/namespaces/list',
+                parentId: 6
+            },
+             {
+                id: 2,
+                label: 'User',
+                link: '/namespaces/user',
+                parentId: 6
+            },
+            {
+               id: 2,
+                label: 'Quota',
+                link: '/',
+               parentId: 6
+            }
+        ]
+    },{
+         id: 7,
+          label: 'Container Registry',
+          icon: 'bx bx-arrow-to-left',
+          // badge: {
+           // variant: 'info',
+           // text: '03',
+          // },
+          subItems: [
+            {
+                id: 1,
+                label: 'Report',
+                link: '/',
+                parentId: 7
+            }
+        ]
+    },{
+        id: 8,
+        label: 'Persistent Volumes',
+        icon: 'bx bx-badge',
+        link: '/persistent',
+    },{
+        id: 9,
+        label: 'Users',
+        icon: 'bx bx-user-circle',
+        link: '/users',
+    },{
+        id: 10,
+        label: 'Workloads',
+        icon: 'bx bx-sticker',
+        link: '/Workloads',
+    }
+];
+
+
+
+
+
+
+
+
 export const MENU: MenuItem[] = [
     {
         id: 1,
@@ -12,7 +109,7 @@ export const MENU: MenuItem[] = [
         icon: 'bx-home-circle',
         link: '/dashboard',
     },
-        // {
+      // {
         // id: 2,
         //  label: 'Dashboards',
         //  icon: 'bx-home-circle',
@@ -42,7 +139,7 @@ export const MENU: MenuItem[] = [
        // ]
   //  },
   {
-         id: 4,
+         id: 3,
           label: 'Cluster',
           icon: 'bx bx-planet',
          // badge: {
@@ -53,36 +150,137 @@ export const MENU: MenuItem[] = [
             {
                 id: 1,
                 label: 'Namespaces',
-                link: '/namespaces',
-                parentId: 4
+                link: '/cluster/namespaces',
+                parentId: 3
             },
             {
                id: 2,
                 label: 'Nodes',
-                link: '/nodes',
-            parentId: 4
+                link: '/cluster/nodes',
+            parentId: 3
             },
             {
                 id: 3,
                 label: 'Persistent Volumes',
-               link: '/',
-            parentId: 2
+               link: '/cluster/persistent',
+            parentId: 3
           },
           {
                 id: 4,
                 label: 'Roles',
-               link: '/',
-            parentId: 4
+               link: '/cluster/roles',
+            parentId: 3
           },
           {
                 id: 5,
                 label: 'Storage Classes',
-               link: '/',
+               link: '/cluster/storageclasses',
+            parentId: 3
+          },
+        ]
+    },{
+         id: 4,
+          label: 'Workloads',
+          icon: 'bx bx-sticker',
+         // badge: {
+            // variant: 'info',
+             // text: '03',
+        // },
+          subItems: [
+            {
+                id: 1,
+                label: 'Deployments',
+                link: '/workloads/developments',
+                parentId: 4
+            },
+            {
+               id: 2,
+                label: 'Replica Sets',
+                link: '/workloads/replica',
+            parentId: 4
+            },
+            {
+                id: 3,
+                label: 'Replication Controllers',
+               link: '/workloads/replication',
+            parentId: 2
+          },
+          {
+                id: 4,
+                label: 'Daemon Sets',
+               link: '/workloads/daemonsets',
             parentId: 4
           },
+          {
+                id: 5,
+                label: 'Pet Sets',
+               link: '/',
+            parentId: 4
+          },{
+                id: 6,
+                label: 'Jobs',
+               link: '/workloads/jobs',
+            parentId: 4
+          },{
+                id: 7,
+                label: 'Pods',
+               link: '/workloads/pods',
+            parentId: 4
+          },
+
         ]
     },
      {
+         id: 5,
+          label: 'Discovery Balancing',
+          icon: 'bx bx-arrow-to-top',
+         // badge: {
+            // variant: 'info',
+             // text: '03',
+        // },
+          subItems: [
+            {
+                id: 1,
+                label: 'Ingresses',
+                link: '/discovery/ingresses',
+                parentId: 5
+            },
+            {
+               id: 2,
+                label: 'Services',
+                link: '/discovery/services',
+            parentId: 5
+            }
+        ]
+    },{
+         id: 5,
+          label: 'Config and Storage',
+          icon: 'bx bx-badge',
+         // badge: {
+            // variant: 'info',
+             // text: '03',
+        // },
+          subItems: [
+            {
+                id: 1,
+                label: 'Config Maps',
+                link: '/config/configmaps',
+                parentId: 5
+            },
+            {
+               id: 2,
+                label: 'PersistentVolumeClaims',
+                link: '/config/persistentvalume',
+            parentId: 5
+            },
+            {
+               id: 2,
+                label: 'Secrets',
+                link: '/config/secrets',
+            parentId: 5
+            }
+        ]
+    },{
          id: 5,
           label: 'Compute',
           icon: 'bx bx-message-rounded-detail',
@@ -92,19 +290,19 @@ export const MENU: MenuItem[] = [
         // },
           subItems: [
             {
-                id: 3,
+                id: 1,
                 label: 'List Of Clusters',
                 link: '/',
                 parentId: 5
             },
             {
-               id: 4,
+               id: 2,
                 label: 'List Of PRODS',
                 link: '/',
             parentId: 5
             },
             {
-                id: 5,
+                id: 3,
                 label: 'Deployed PRODS',
                link: '/',
             parentId: 5

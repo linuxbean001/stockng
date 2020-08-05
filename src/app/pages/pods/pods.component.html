@@ -1,0 +1,159 @@
+
+<div class="container-fluid">
+  <app-page-title title="WORKLOADS" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+  <div class="row">
+    <div class="col-6">
+
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title mb-3">CPU Usage history</h4>
+
+                    <div>
+                        <div id="overview-chart" class="apex-charts" dir="ltr"></div>
+                        <apx-chart class="apex-charts" dir="ltr" [series]="OveviewChart.series"
+                            [chart]="OveviewChart.chart" [colors]="OveviewChart.colors" [stroke]="OveviewChart.stroke"
+                            [dataLabels]="OveviewChart.dataLabels" [fill]="OveviewChart.fill"
+                            [xaxis]="OveviewChart.xaxis">
+                        </apx-chart>
+                    </div>
+                </div>
+            </div>
+
+</div>
+ <div class="col-6">
+
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title mb-3">Memory Usage history</h4>
+
+                    <div>
+                        <div id="overview-chart" class="apex-charts" dir="ltr"></div>
+                        <apx-chart class="apex-charts" dir="ltr" [series]="OveviewChartMemory.series"
+                            [chart]="OveviewChartMemory.chart" [colors]="OveviewChartMemory.colors" [stroke]="OveviewChartMemory.stroke"
+                            [dataLabels]="OveviewChartMemory.dataLabels" [fill]="OveviewChartMemory.fill"
+                            [xaxis]="OveviewChartMemory.xaxis">
+                        </apx-chart>
+                    </div>
+                </div>
+            </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Pods</h4>
+         <!--  <p class="card-sub-title">
+            Example of datatable.
+          </p> -->
+          <div class="row mb-md-2">
+            <!-- <div class="col-sm-12 col-md-6">
+              <div class="dataTables_length" id="tickets-table_length"><label
+                  class="d-inline-flex align-items-center">Show
+                  <select name="tickets-table_length" aria-controls="tickets-table" name="pageSize"
+                    [(ngModel)]="service.pageSize"
+                    class="custom-select custom-select-sm form-control form-control-sm mx-2">
+                    <option [ngValue]="10">10</option>
+                    <option [ngValue]="25">25</option>
+                    <option [ngValue]="50">50</option>
+                    <option [ngValue]="100">100</option>
+                  </select> entries</label></div>
+            </div> -->
+            <!-- Search -->
+            <div class="col-sm-12 col-md-12">
+              <div id="tickets-table_filter" class="dataTables_filter text-md-right"><label
+                  class="d-inline-flex align-items-center">Search:
+                  <input type="text" name="searchTerm" class="form-control form-control-sm ml-2"
+                    aria-controls="tickets-table" [(ngModel)]="service.searchTerm"></label></div>
+            </div>
+            <!-- End search -->
+          </div>
+          <!-- Table -->
+          <div class="table-responsive">
+            <table id="basic-datatable"
+              class="table table-bordered dt-responsive nowrap datatables no-footer dtr-inline">
+              <thead>
+                <tr>
+                  <th sortable="name" (sort)="onSort($event)">Name</th>
+                  <th sortable="status" class="stsrm"  (sort)="onSort($event)">Status</th>
+                  <th sortable="restarts" class="stsrm"  (sort)="onSort($event)">Restarts</th>
+                  <th sortable="age" (sort)="onSort($event)">Age</th>
+                  <th sortable="clusterip" class="stsrm"  (sort)="onSort($event)">ClusterIp</th>
+                  <th sortable="cpu" (sort)="onSort($event)">CPU(cors)</th>
+                  <th sortable="memory" class="stsrm"  (sort)="onSort($event)">Memory(bytes)</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let table of tables$ | async">
+                  <td>
+                  	 <i class="far fa-check-square"></i>&nbsp; 
+                    <ngb-highlight class="text-primary" [result]="table.name" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.status" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.restarts" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.age" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                   <td>
+                    <ngb-highlight [result]="table.clusterip" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.cpu" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.memory" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <div class="dropdown" ngbDropdown placement="bottom-right">
+                      <a href="javascript: void(0);" class="dropdown-toggle card-drop" data-toggle="dropdown"
+                        ngbDropdownToggle aria-expanded="false">
+                        <i class="mdi mdi-dots-horizontal font-size-18"></i>
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                        <li><a href="javascript: void(0);" class="dropdown-item"><i
+                              class="fas fa-pencil-alt text-success mr-1"></i>
+                            Edit</a></li>
+                        <li><a href="javascript: void(0);" class="dropdown-item"><i
+                              class="fas fa-trash-alt text-danger mr-1"></i>
+                            Delete</a></li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- End table -->
+          <div class="row justify-content-md-between align-items-md-center mt-2">
+            <div class="col-sm-12 col-md-5">
+              <div class="dataTables_info mb-2" id="tickets-table_info" role="status" aria-live="polite">Showing
+                {{service.startIndex}} to
+                {{service.endIndex}} of {{service.totalRecords}}
+                entries
+              </div>
+            </div>
+            <!-- Pagination -->
+            <div class="col-sm-12 col-md-5">
+              <div class="text-md-right float-md-right pagination-rounded">
+                <ngb-pagination [collectionSize]="total$ | async" [(page)]="service.page" [pageSize]="service.pageSize">
+                </ngb-pagination>
+              </div>
+            </div>
+            <!-- End Pagination -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

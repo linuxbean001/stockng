@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
-import { AuthenticationService } from '../../core/services/auth.service';
+import { AuthenticationService } from '../../core/services/authentication.service';
 
 @Component({
   selector: 'app-topbar',
@@ -17,7 +17,7 @@ export class TopbarComponent implements OnInit {
   element;
   configData;
 
-  constructor(@Inject(DOCUMENT) private document: any, private router: Router, private authService: AuthenticationService) { }
+  constructor(@Inject(DOCUMENT) private document: any, private router: Router, private authenticationService: AuthenticationService) { }
 
   openMobileMenu: boolean;
 
@@ -53,7 +53,7 @@ export class TopbarComponent implements OnInit {
    * Logout the user
    */
   logout() {
-    this.authService.logout();
+    this.authenticationService.logout();
     this.router.navigate(['/account/login']);
   }
 

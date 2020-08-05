@@ -48,12 +48,12 @@ function sort(tables: Table[], column: string, direction: string): Table[] {
  * @param term Search the value
  */
 function matches(tables: Table, term: string, pipe: PipeTransform) {
-    return tables.name.toLowerCase().includes(term)
-        || tables.lebels.toLowerCase().includes(term)
-        || tables.status.toLowerCase().includes(term)
-        || tables.age.toLowerCase().includes(term);
+    return tables.namespace.toLowerCase().includes(term)
+        || tables.environ.toLowerCase().includes(term)
+        || tables.created.toLowerCase().includes(term)
+        || tables.loca.toLowerCase().includes(term);
         
-}
+} 
 
 @Injectable({
     providedIn: 'root'

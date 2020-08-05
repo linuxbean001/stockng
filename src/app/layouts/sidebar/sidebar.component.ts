@@ -3,7 +3,7 @@ import MetisMenu from 'metismenujs/dist/metismenujs';
 import { EventService } from '../../core/services/event.service';
 import { Router, NavigationEnd } from '@angular/router';
 
-import { MENU } from './menu';
+import { MENU, BUMENU} from './menu';
 import { MenuItem } from './menu.model';
 
 @Component({
@@ -192,7 +192,8 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnChanges {
   * Initialize
   */
   initialize(): void {
-    this.menuItems = MENU;
+    this.menuItems = BUMENU;
+    //this.menuItems = MENU;
   }
 
   /**

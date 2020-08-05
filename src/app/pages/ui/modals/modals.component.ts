@@ -66,7 +66,7 @@ export class ModalsComponent implements OnInit {
    * @param scrollDataModal scroll modal data
    */
   scrollModal(scrollDataModal: any) {
-    this.modalService.open(scrollDataModal, { scrollable: true });
+    this.modalService.open(scrollDataModal, { scrollable: true,size: 'xl' });
   }
 
 }
