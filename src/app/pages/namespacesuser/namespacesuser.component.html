@@ -54,9 +54,65 @@
 
 <!-- Tab Content -->
   <ng-template #genContent>
-  	<p class="p-3 mb-0">
-     General
-    </p>
+
+  	
+<div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+
+        
+        
+          <div class="form-group row">
+            <label class="col-md-2 col-form-label">CPU</label>
+            <div class="col-md-10">
+              <select class="form-control">
+                <option>16vCPU</option>
+                <option>32vCPU</option>
+                <option>64vCPU</option>
+                <option>128vCPU</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-2 col-form-label">Memory</label>
+            <div class="col-md-10">
+              <select class="form-control">
+                <option>128GB</option>
+                <option>500GB</option>
+                <option>1TB</option>
+                <option>2TB</option>
+                <option>3TB</option>
+              </select>
+            </div>
+          </div>
+
+            <div class="form-group row">
+            <label class="col-md-2 col-form-label">Storage</label>
+            <div class="col-md-10">
+              <select class="form-control">
+                <option>100GB</option>
+                <option>200GB</option>
+                <option>500GB</option>
+                <option>700GB</option>
+                <option>900GB</option>
+                <option>1TB</option>
+              </select>
+            </div>
+          </div>
+
+
+           <div class="text-center mt-4">
+            <button type="button" class="btn btn-primary">Request Quota change</button>
+          </div>
+
+         
+        </div>
+      </div>
+    </div> <!-- end col -->
+  </div>
+
   </ng-template>
 
   <!-- Tab Content -->
