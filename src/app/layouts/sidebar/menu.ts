@@ -29,7 +29,7 @@ export const BUMENU: MenuItem[] = [
         icon: 'bx bx-receipt',
         link: '/reports',
     },{
-         id: 6,
+        id: 6,
           label: 'Namespaces',
           icon: 'bx bx-baseball',
           // badge: {

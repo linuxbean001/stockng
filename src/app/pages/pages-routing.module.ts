@@ -6,6 +6,7 @@ import { ChatComponent } from './chat/chat.component';
 import { ContainerregistryComponent } from './containerregistry/containerregistry.component';
 import { NamespacesComponent } from './namespaces/namespaces.component';
 import { NamespacesuserComponent } from './namespacesuser/namespacesuser.component';
+import { UsersComponent } from './users/users.component';
 import { NodesComponent } from './nodes/nodes.component';
 import { NodesdetailsComponent } from './nodesdetails/nodesdetails.component'
 import { RolesComponent } from './roles/roles.component'
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'cluster/namespaces', component: NamespacesComponent },
   { path: 'namespaces/list', component: NamespacesComponent },
   { path: 'namespaces/user', component: NamespacesuserComponent },
+  { path: 'users', component: UsersComponent },
   { path: 'cluster/nodes', component: NodesComponent },
   { path: 'cluster/nodes/details', component: NodesdetailsComponent },
   { path: 'cluster/roles', component: RolesComponent },
