@@ -18,4 +18,20 @@ const tableData = [
   }
 ];
 
-export { tableData };
+const tableDataUser = [
+  {
+    usergroup: 'mary Jane',
+    group: 'Engineering'
+  },{
+    usergroup: 'mary k',
+    group: 'Business'
+  },{
+    usergroup: 'mary c',
+    group: 'Finance'
+  },{
+    usergroup: 'mary d',
+    group: 'Finance'
+  }
+];
+
+export { tableData,tableDataUser };

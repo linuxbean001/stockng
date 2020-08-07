@@ -4,18 +4,18 @@ import { DecimalPipe } from '@angular/common';
 
 import { Observable } from 'rxjs';
 
-import { Table } from './advanced.model';
+import { Table } from './namespaces.model';
 
 import { tableData } from './data';
 
-import { AdvancedService } from './advanced.service';
-import { AdvancedSortableDirective, SortEvent } from './advanced-sortable.directive';
+import { NamespacesService } from './namespaces.service';
+import { NamespacesSortableDirective, SortEvent } from './namespaces-sortable.directive';
 
 @Component({
   selector: 'app-namespaces',
   templateUrl: './namespaces.component.html',
   styleUrls: ['./namespaces.component.scss'],
-  providers: [AdvancedService, DecimalPipe]
+  providers: [NamespacesService, DecimalPipe]
 })
 
 /**
@@ -31,9 +31,9 @@ export class NamespacesComponent implements OnInit {
   tables$: Observable<Table[]>;
   total$: Observable<number>;
 
-  @ViewChildren(AdvancedSortableDirective) headers: QueryList<AdvancedSortableDirective>;
+  @ViewChildren(NamespacesSortableDirective) headers: QueryList<NamespacesSortableDirective>;
 
-  constructor(public service: AdvancedService) {
+  constructor(public service: NamespacesService) {
     this.tables$ = service.tables$;
     this.total$ = service.total$;
   }
@@ -47,7 +47,6 @@ export class NamespacesComponent implements OnInit {
      */
     this._fetchData();
   }
-
 
   /**
    * fetches the table value

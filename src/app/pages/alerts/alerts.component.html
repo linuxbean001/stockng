@@ -1,11 +1,10 @@
 <div class="container-fluid">
-  <app-page-title title="Namespaces List" [breadcrumbItems]="breadCrumbItems"></app-page-title>
-<div class="test-rightbtn"><button type="button" class="btn btn-primary ">Request a Namespace</button></div>
+  <app-page-title title="Alerts List" [breadcrumbItems]="breadCrumbItems"></app-page-title>
   <div class="row">
     <div class="col-12">
       <div class="card">
         <div class="card-body">
-         <!--  <h4 class="card-title">List</h4> -->
+          <!-- <h4 class="card-title">Alerts List</h4> -->
          <!--  <p class="card-sub-title">
             Example of datatable.
           </p> -->
@@ -37,26 +36,35 @@
               class="table table-bordered dt-responsive nowrap datatables no-footer dtr-inline">
               <thead>
                 <tr>
-                  <th sortable="namespace" (sort)="onSort($event)">Namespaces</th>
-                  <th sortable="environ" class="stsrm"  (sort)="onSort($event)">Environ</th>
-                  <th sortable="created" class="stsrm"  (sort)="onSort($event)">Created</th>
-                  <th sortable="loca" (sort)="onSort($event)">Loca</th>
+                  <th sortable="alert" (sort)="onSort($event)">Alert</th>
+                  <th sortable="organization" class="stsrm"  (sort)="onSort($event)">Organization</th>
+                  <th sortable="level" class="stsrm"  (sort)="onSort($event)">Level</th>
+                  <th sortable="action" (sort)="onSort($event)">Action</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let table of tables$ | async">
                   <td>
                   	<!--  <i class="far fa-check-square"></i>&nbsp;  -->
-                    <ngb-highlight class="text-primary pointer" routerLink="/namespaces/user" routerLinkActive="active" [result]="table.namespace" [term]="service.searchTerm"></ngb-highlight>
+                    <ngb-highlight [result]="table.alert" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                   <td>
-                    <ngb-highlight [result]="table.environ" [term]="service.searchTerm"></ngb-highlight>
+                    <ngb-highlight [result]="table.organization" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                   <td>
-                    <ngb-highlight [result]="table.created" [term]="service.searchTerm"></ngb-highlight>
+                    <ngb-highlight [result]="table.level" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                   <td>
-                    <ngb-highlight [result]="table.loca" [term]="service.searchTerm"></ngb-highlight>
+                    <ngb-highlight [result]="table.action" [term]="service.searchTerm"></ngb-highlight>
+                     <div class="dropdown acalrtto" ngbDropdown placement="bottom-right">
+                    <a href="javascript: void(0);" class="dropdown-toggle card-drop" ngbDropdownToggle>
+                      <i class="mdi mdi-dots-horizontal font-size-18"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                     <a class="dropdown-item" href="javascript: void(0);">Request Quota Increase</a>
+                     <a class="dropdown-item" href="javascript: void(0);">Ignore</a>     
+                    </div>
+                  </div>
                   </td>
                 </tr>
               </tbody>
