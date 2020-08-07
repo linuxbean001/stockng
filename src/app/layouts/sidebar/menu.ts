@@ -17,7 +17,7 @@ export const BUMENU: MenuItem[] = [
         id: 3,
         label: 'Alerts',
         icon: 'bx bx-arrow-to-top',
-        link: '/',
+        link: '/alerts',
     },{
         id: 4,
         label: 'Cluster',

@@ -3,37 +3,36 @@ import { DecimalPipe } from '@angular/common';
 
 import { Observable } from 'rxjs';
 
-import { Table} from './users.model';
+import { Table } from './alerts.model';
 
 import { tableData } from './data';
 
-import { UsersService } from './users.service';
-import { UsersSortableDirective, SortEvent } from './users-sortable.directive';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AlertsService } from './alerts.service';
+import { AlertsSortableDirective, SortEvent } from './alerts-sortable.directive';
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss'],
-  providers: [UsersService, DecimalPipe]
+  selector: 'app-alerts',
+  templateUrl: './alerts.component.html',
+  styleUrls: ['./alerts.component.scss'],
+  providers: [AlertsService, DecimalPipe]
 })
- 
+
 /**
  * Advanced table component
  */
-export class UsersComponent implements OnInit {
+export class AlertsComponent implements OnInit {
   // bread crum data
   breadCrumbItems: Array<{}>;
 
   // Table data
   tableData: Table[];
- 
+
   tables$: Observable<Table[]>;
   total$: Observable<number>;
 
-  @ViewChildren(UsersSortableDirective) headers: QueryList<UsersSortableDirective>;
+  @ViewChildren(AlertsSortableDirective) headers: QueryList<AlertsSortableDirective>;
 
-  constructor(public service: UsersService,private modalService: NgbModal) {
+  constructor(public service: AlertsService) {
     this.tables$ = service.tables$;
     this.total$ = service.total$;
   }
@@ -47,15 +46,6 @@ export class UsersComponent implements OnInit {
      */
     this._fetchData();
   }
-
-    /**
-   * Open modal
-   * @param content modal content
-   */
-  openModal(content: any) {
-    this.modalService.open(content);
-  }
-
 
 
   /**
@@ -81,4 +71,5 @@ export class UsersComponent implements OnInit {
     this.service.sortDirection = direction;
   }
 }
+
 

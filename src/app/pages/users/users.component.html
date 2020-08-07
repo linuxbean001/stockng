@@ -1,12 +1,13 @@
 <div class="container-fluid">
-  <app-page-title title="Namespaces" [breadcrumbItems]="breadCrumbItems"></app-page-title>
-<div><button type="button" class="btn btn-primary ">Add User</button></div>
-<div><button type="button" class="btn btn-primary ">Remove User</button></div>
+  <app-page-title title="Users List" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+<div class="btnuser">
+<button type="button" (click)="openModal(content)" class="btn btn-info btnuadd">Add User</button>
+</div>
   <div class="row">
     <div class="col-12">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">List</h4>
+         <!--  <h4 class="card-title">Users List</h4> -->
          <!--  <p class="card-sub-title">
             Example of datatable.
           </p> -->
@@ -45,11 +46,19 @@
               <tbody>
                 <tr *ngFor="let table of tables$ | async">
                   <td>
-                  	 <i class="far fa-check-square"></i>&nbsp; 
-                    <ngb-highlight class="text-primary" [result]="table.name" [term]="service.searchTerm"></ngb-highlight>
+                  	<!--  <i class="far fa-check-square"></i>&nbsp;  -->
+                    <ngb-highlight [result]="table.name" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                   <td>
                     <ngb-highlight [result]="table.role" [term]="service.searchTerm"></ngb-highlight>
+                     <div class="dropdown acalrtto" ngbDropdown placement="bottom-right">
+                    <a href="javascript: void(0);" class="dropdown-toggle card-drop" ngbDropdownToggle>
+                      <i class="mdi mdi-dots-horizontal font-size-18"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                     <a class="dropdown-item" href="javascript: void(0);">Remove</a>     
+                    </div>
+                  </div>
                   </td>
                 </tr>
               </tbody>
@@ -78,4 +87,35 @@
     </div>
   </div>
 </div>
+
+<!-- Standard Modal -->
+<ng-template #content role="document" let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title mt-0">Add User</h5>
+    <button type="button" class="close" aria-hidden="true" (click)="modal.dismiss('Cross click')">×</button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Email</label>
+            <div class="col-md-10">
+              <input class="form-control" type="text" value="john@abc.com" id="example-text-input">
+            </div>
+      </div>
+
+      <div class="form-group row">
+            <label class="col-md-2 col-form-label">Role</label>
+            <div class="col-md-10">
+              <select class="form-control">
+                <option>Org Admin</option>
+                <option>Developer</option>
+              </select>
+            </div>
+      </div>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    <button type="button" class="btn btn-primary">Create</button>
+  </div>
+</ng-template>
 

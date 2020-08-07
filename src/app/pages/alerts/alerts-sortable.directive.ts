@@ -18,7 +18,7 @@ export interface SortEvent {
   }
 })
 
-export class AdvancedSortableDirective {
+export class AlertsSortableDirective {
 
   constructor() { }
 

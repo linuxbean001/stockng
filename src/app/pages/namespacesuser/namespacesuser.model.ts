@@ -5,7 +5,16 @@ export interface Table {
     role: string;
 }
 
+export interface TableUser {
+    usergroup: string;
+    group: string;
+}
 
+// Search Data
+export interface SearchResultOther {
+    tablesuser: Table[];
+    total: number;
+}
 
 // Search Data
 export interface SearchResult {

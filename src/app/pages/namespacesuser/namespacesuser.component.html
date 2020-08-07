@@ -192,9 +192,86 @@
 
    <!-- Tab Content -->
   <ng-template #addContent>
-    <p class="p-3 mb-0">
-     Add User
-    </p>
+   <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+        <!--   <h4 class="card-title">Responsive tables</h4> --> 
+          <div class="table-bordered">
+            <table class="table mb-0">
+              <thead>
+                <tr>
+                  <th>User Group</th>
+                  <th>Group</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>mary Jane</td>
+                  <td>Engineering
+                    <div class="dropdown acalrtto" ngbDropdown placement="bottom-right">
+                    <a href="javascript: void(0);" class="dropdown-toggle card-drop" ngbDropdownToggle>
+                      <i class="mdi mdi-dots-horizontal font-size-18"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                     <a class="dropdown-item" href="javascript: void(0);">Add User To Namespace</a>    
+                    </div>
+                     </div>
+                    </td>
+                </tr>
+                 <tr>
+                  <td>mary k</td>
+                  <td>Business
+                      
+                       <div class="dropdown acalrtto" ngbDropdown placement="bottom-right">
+                    <a href="javascript: void(0);" class="dropdown-toggle card-drop" ngbDropdownToggle>
+                      <i class="mdi mdi-dots-horizontal font-size-18"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                     <a class="dropdown-item" href="javascript: void(0);">Add User To Namespace</a> 
+                    </div>
+                     </div>
+                  </td>
+
+
+                </tr>
+                <tr>
+                  <td>mary c</td>
+                  <td>Finance
+                  <div class="dropdown acalrtto" ngbDropdown placement="bottom-right">
+                    <a href="javascript: void(0);" class="dropdown-toggle card-drop" ngbDropdownToggle>
+                      <i class="mdi mdi-dots-horizontal font-size-18"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                     <a class="dropdown-item" href="javascript: void(0);">Add User To Namespace</a>    
+                    </div>
+                     </div>
+                  </td>
+                </tr>
+                 <tr>
+                  <td>mary d</td>
+                  <td>Finance
+                   <div class="dropdown acalrtto" ngbDropdown placement="bottom-right">
+                    <a href="javascript: void(0);" class="dropdown-toggle card-drop" ngbDropdownToggle>
+                      <i class="mdi mdi-dots-horizontal font-size-18"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                     <a class="dropdown-item" href="javascript: void(0);">Add User To Namespace</a>    
+                    </div>
+                     </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+           <!--  <div class="text-center mt-4">
+            <button type="button" class="btn btn-primary">Add User To Namespace</button>
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
   </ng-template>
 
    <!-- Tab Content -->
