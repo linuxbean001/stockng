@@ -1,0 +1,52 @@
+.budashboardcs div#resizefont >div >div >canvas {
+    position: relative;
+    height: 200px !important;
+    width: auto !important;
+}
+
+.budashboardcs div#bucard {
+    position: relative;
+    bottom: 100px;
+}
+
+.budashboardcs #cardtabgs{
+	position: relative;
+    max-height: 256px;
+}
+
+
+.budashboardcs span.cpufirst {
+    position: absolute;
+    top: 261px;
+    left: 41%;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.budashboardcs span.memosecound {
+    position: absolute;
+    top: 261px;
+    left: 36%;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.budashboardcs span.storfard {
+    position: absolute;
+    top: 261px;
+    left: 38%;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.budashboardcs span.detailsforth {
+    position: absolute;
+    top: 261px;
+    left: 38%;
+    font-size: 15px;
+    color:#556ee6;
+    cursor: pointer;
+}
+
+
+
