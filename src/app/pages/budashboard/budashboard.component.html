@@ -1,28 +1,28 @@
-<div class="container-fluid">
+<div class="container-fluid budashboardcs">
   <app-page-title title="BU Dashboard" [breadcrumbItems]="breadCrumbItems"></app-page-title>
 	<div class="row">
 	<div class="col-lg-12">
-	<div class="card">
-	<div class="card-body">
-
-	  <div class="row">
-	     
-			<div class="col-lg-4">  
-			   	<h4 class="card-title">Namespace 1</h4>  	
+	<div class="card" id="cardtabgs">
+	<div class="card-body"> 
+    <h4 class="card-title">Namespace 1</h4>
+	  <div class="row" id="bucard">
+      <div class="col-lg-1"></div>
+			<div class="col-lg-3">  	
 			<div  echarts [options]="gaugeChart" class="demo-chart"></div>
-			 <!-- <div>CPU</div>  -->    
+			 <span class="cpufirst">CPU</span> 
 			</div>
-
-			<div class="col-lg-4"> 
-			<div  echarts [options]="gaugeChart" class="demo-chart"></div>   
+			<div class="col-lg-3"> 
+			<div  echarts [options]="gaugeMemory" class="demo-chart"></div>   
+      <span class="memosecound">Memory</span> 
 			</div>
-
-			<div class="col-lg-4"> 
-			<div  echarts [options]="gaugeChart" class="demo-chart"></div>   
+			<div class="col-lg-3"> 
+			<div  echarts [options]="gaugeStorage" class="demo-chart"></div> 
+      <span class="storfard">Storage</span>        
 			</div>
+       <div class="col-lg-2">
+         <span  class="detailsforth">Details..</span>
+       </div>
 	  </div>
-
-
 	</div>
 	</div>
 	</div>

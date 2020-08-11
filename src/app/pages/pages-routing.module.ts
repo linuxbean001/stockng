@@ -5,6 +5,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { ChatComponent } from './chat/chat.component';
 import { ContainerregistryComponent } from './containerregistry/containerregistry.component';
 import { NamespacesComponent } from './namespaces/namespaces.component';
+import { ChangequotaComponent } from './changequota/changequota.component';
 import { NamespacesuserComponent } from './namespacesuser/namespacesuser.component';
 import { UsersComponent } from './users/users.component';
 import { AlertsComponent } from './alerts/alerts.component';
@@ -33,9 +34,10 @@ const routes: Routes = [
   { path: '', redirectTo: 'dashboard' },
   { path: 'dashboard', component: BudashboardComponent,canActivate: [AuthGuard]},
   { path: 'budashboard', component: BudashboardComponent },
-  { path: 'containerregistry', component: ContainerregistryComponent },
+  { path: 'bu/containerregistry', component: ContainerregistryComponent },
   { path: 'cluster/namespaces', component: NamespacesComponent },
   { path: 'namespaces/list', component: NamespacesComponent },
+  { path: 'changequota', component: ChangequotaComponent },
   { path: 'namespaces/user', component: NamespacesuserComponent },
   { path: 'users', component: UsersComponent },
   { path: 'alerts', component: AlertsComponent },

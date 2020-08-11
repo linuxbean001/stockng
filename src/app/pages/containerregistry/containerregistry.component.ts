@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-containerregistry',
@@ -7,32 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContainerregistryComponent implements OnInit {
 
-  constructor() { }
-
-  statData;
+  constructor(private modalService: NgbModal) { }
+// bread crumb items
+  breadCrumbItems: Array<{}>;
 
   ngOnInit() {
 
     /**
      * Fetches the data
      */
-    this.fetchData();
+    this.breadCrumbItems = [];
   }
 
-  /**
-   * Fetches the data
+   /**
+   * Open modal
+   * @param content modal content
    */
-  private fetchData() {
-
-    this.statData = [{
-    icon: 'bx bx-copy-alt',
-    title: 'Images',
-    value: '1235'
-}, {
-    icon: 'bx bx-archive-in',
-    title: 'Helm Charts',
-    value: '3522'
-}];
+  openModal(content: any) {
+    this.modalService.open(content);
   }
 
 
