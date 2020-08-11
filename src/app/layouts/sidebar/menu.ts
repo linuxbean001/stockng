@@ -30,60 +30,31 @@ export const BUMENU: MenuItem[] = [
         link: '/reports',
     },{
         id: 6,
-          label: 'Namespaces',
-          icon: 'bx bx-baseball',
-          // badge: {
-           // variant: 'info',
-           // text: '03',
-          // },
-          subItems: [
-            {
-                id: 1,
-                label: 'List',
-                link: '/namespaces/list',
-                parentId: 6
-            },
-             {
-                id: 2,
-                label: 'User',
-                link: '/namespaces/user',
-                parentId: 6
-            },
-            {
-               id: 2,
-                label: 'Quota',
-                link: '/',
-               parentId: 6
-            }
-        ]
+        label: 'Namespaces',
+        icon: 'bx bx-baseball',
+        link: '/namespaces/list',
     },{
-         id: 7,
-          label: 'Container Registry',
-          icon: 'bx bx-arrow-to-left',
-          // badge: {
-           // variant: 'info',
-           // text: '03',
-          // },
-          subItems: [
-            {
-                id: 1,
-                label: 'Report',
-                link: '/',
-                parentId: 7
-            }
-        ]
+        id: 7,
+        label: 'Change Quota',
+        icon: 'bx bx-task',
+        link: '/changequota',
     },{
         id: 8,
+        label: 'Container Registry',
+        icon: 'bx bx-arrow-to-left',
+        link: '/bu/containerregistry',
+    },{
+        id: 9,
         label: 'Persistent Volumes',
         icon: 'bx bx-badge',
         link: '/persistent',
     },{
-        id: 9,
+        id: 10,
         label: 'Users',
         icon: 'bx bx-user-circle',
         link: '/users',
     },{
-        id: 10,
+        id: 11,
         label: 'Workloads',
         icon: 'bx bx-sticker',
         link: '/Workloads',
