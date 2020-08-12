@@ -12,32 +12,32 @@ export const BUMENU: MenuItem[] = [
         id: 2,
         label: 'Dashboards',
         icon: 'bx bx-home-circle',
-        link: '/budashboard',
+        link: '/bu/dashboard',
     },{
         id: 3,
         label: 'Alerts',
         icon: 'bx bx-arrow-to-top',
-        link: '/alerts',
+        link: '/bu/alerts',
     },{
         id: 4,
         label: 'Cluster',
         icon: 'bx bx-planet',
-        link: '/cluster',
+        link: '/bu/cluster',
     },{
         id: 5,
         label: 'Reports',
         icon: 'bx bx-receipt',
-        link: '/reports',
+        link: '/bu/reports',
     },{
         id: 6,
         label: 'Namespaces',
         icon: 'bx bx-baseball',
-        link: '/namespaces/list',
+        link: '/bu/namespaces/list',
     },{
         id: 7,
         label: 'Change Quota',
         icon: 'bx bx-task',
-        link: '/changequota',
+        link: '/bu/changequota',
     },{
         id: 8,
         label: 'Container Registry',
@@ -47,17 +47,17 @@ export const BUMENU: MenuItem[] = [
         id: 9,
         label: 'Persistent Volumes',
         icon: 'bx bx-badge',
-        link: '/persistent',
+        link: '/bu/persistent',
     },{
         id: 10,
         label: 'Users',
         icon: 'bx bx-user-circle',
-        link: '/users',
+        link: '/bu/users',
     },{
         id: 11,
         label: 'Workloads',
         icon: 'bx bx-sticker',
-        link: '/Workloads',
+        link: '/bu/Workloads',
     }
 ];
 

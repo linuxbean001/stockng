@@ -29,18 +29,20 @@ import { PersistentvalumeComponent } from './persistentvalume/persistentvalume.c
 import { SecretsComponent } from './secrets/secrets.component';
 import { PersistentvalumedetailsComponent } from './persistentvalumedetails/persistentvalumedetails.component';
 import { BudashboardComponent } from './budashboard/budashboard.component';
+import { SystemdashboardComponent } from './systemdashboard/systemdashboard.component';
 import { AuthGuard } from '../core/guards/auth.guard';
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard' },
+  { path: '', redirectTo: 'bu/dashboard' },
   { path: 'dashboard', component: BudashboardComponent,canActivate: [AuthGuard]},
-  { path: 'budashboard', component: BudashboardComponent },
+  { path: 'bu/dashboard', component: BudashboardComponent },
+  { path: 'sa/dashboard', component: SystemdashboardComponent },
   { path: 'bu/containerregistry', component: ContainerregistryComponent },
   { path: 'cluster/namespaces', component: NamespacesComponent },
-  { path: 'namespaces/list', component: NamespacesComponent },
-  { path: 'changequota', component: ChangequotaComponent },
-  { path: 'namespaces/user', component: NamespacesuserComponent },
-  { path: 'users', component: UsersComponent },
-  { path: 'alerts', component: AlertsComponent },
+  { path: 'bu/namespaces/list', component: NamespacesComponent },
+  { path: 'bu/changequota', component: ChangequotaComponent },
+  { path: 'bu/namespaces/user', component: NamespacesuserComponent },
+  { path: 'bu/users', component: UsersComponent },
+  { path: 'bu/alerts', component: AlertsComponent },
   { path: 'cluster/nodes', component: NodesComponent },
   { path: 'cluster/nodes/details', component: NodesdetailsComponent },
   { path: 'cluster/roles', component: RolesComponent },
