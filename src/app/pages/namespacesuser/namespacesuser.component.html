@@ -34,15 +34,6 @@
                 <ng-template [ngTemplateOutlet]="addContent"></ng-template>
               </ng-template>
             </li>
-            <li [ngbNavItem]="4">
-              <a ngbNavLink>
-                <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
-                <span class="d-none d-sm-block">Remove User</span>
-              </a>
-              <ng-template ngbNavContent>
-                <ng-template [ngTemplateOutlet]="removeContent"></ng-template>
-              </ng-template>
-            </li>
           </ul>
           <div [ngbNavOutlet]="justifiednav"></div>
         </div>
@@ -155,7 +146,7 @@
               <tbody>
                 <tr *ngFor="let table of tables$ | async">
                   <td>
-                    <ngb-highlight class="text-primary" [result]="table.usergroup" [term]="service.searchTerm"></ngb-highlight>
+                    <ngb-highlight  [result]="table.usergroup" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                   <td>
                     <ngb-highlight [result]="table.addeddate" [term]="service.searchTerm"></ngb-highlight>
@@ -214,7 +205,8 @@
                       <i class="mdi mdi-dots-horizontal font-size-18"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
-                     <a class="dropdown-item" href="javascript: void(0);">Add User To Namespace</a>    
+                     <a class="dropdown-item" (click)="openModal(content)" href="javascript: void(0);">Add User To Namespace</a> 
+                     <a class="dropdown-item" href="javascript: void(0);">Remove User</a>   
                     </div>
                      </div>
                     </td>
@@ -228,7 +220,8 @@
                       <i class="mdi mdi-dots-horizontal font-size-18"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
-                     <a class="dropdown-item" href="javascript: void(0);">Add User To Namespace</a> 
+                     <a class="dropdown-item" (click)="openModal(content)" href="javascript: void(0);">Add User To Namespace</a>
+                     <a class="dropdown-item" href="javascript: void(0);">Remove User</a>
                     </div>
                      </div>
                   </td>
@@ -243,7 +236,8 @@
                       <i class="mdi mdi-dots-horizontal font-size-18"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
-                     <a class="dropdown-item" href="javascript: void(0);">Add User To Namespace</a>    
+                     <a class="dropdown-item" (click)="openModal(content)" href="javascript: void(0);">Add User To Namespace</a> 
+                     <a class="dropdown-item" href="javascript: void(0);">Remove User</a>   
                     </div>
                      </div>
                   </td>
@@ -256,7 +250,8 @@
                       <i class="mdi mdi-dots-horizontal font-size-18"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
-                     <a class="dropdown-item" href="javascript: void(0);">Add User To Namespace</a>    
+                     <a class="dropdown-item" (click)="openModal(content)" href="javascript: void(0);">Add User To Namespace</a>    
+                     <a class="dropdown-item" href="javascript: void(0);">Remove User</a>
                     </div>
                      </div>
                   </td>
@@ -274,9 +269,69 @@
   </div>
   </ng-template>
 
-   <!-- Tab Content -->
-  <ng-template #removeContent>
-    <p class="p-3 mb-0">
-      Remove User
-    </p>
-  </ng-template>
+
+   <!-- Standard Modal -->
+<ng-template #content role="document" let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title mt-0">Request for Kubernetes Namespace</h5>
+    <button type="button" class="close" aria-hidden="true" (click)="modal.dismiss('Cross click')">×</button>
+  </div>
+  <div class="modal-body">
+
+      <div class="form-group row">
+            <label class="col-md-4 col-form-label">Purpose</label>
+            <div class="col-md-8">
+              <select class="form-control">
+                <option>Test</option>
+                <option>Test1</option>
+              </select>
+            </div>
+      </div>
+
+
+      <div class="form-group row">
+            <label class="col-md-4 col-form-label">Date Center</label>
+            <div class="col-md-8">
+              <select class="form-control">
+                <option>DC1</option>
+                <option>DC2</option>
+              </select>
+            </div>
+      </div>
+
+       <div class="form-group row">
+            <label for="example-text-input" class="col-md-4 col-form-label">CPU</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="16 vCPU" id="example-text-input">
+            </div>
+      </div>
+
+   <div class="form-group row">
+            <label for="example-text-input" class="col-md-4 col-form-label">Memory</label>
+            <div class="col-md-8">
+              <select class="form-control">
+                <option>16 GB</option>
+                <option>32 GB</option>
+              </select>
+            </div>
+      </div>
+
+       <div class="form-group row">
+            <label for="example-text-input" class="col-md-4 col-form-label">Storage</label>
+            <div class="col-md-8">
+              <select class="form-control">
+                <option>100 GB</option>
+                <option>200 GB</option>
+              </select>
+            </div>
+      </div>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    <button type="button" class="btn btn-primary">Request Namespace</button>
+  </div>
+</ng-template>
+
+
+

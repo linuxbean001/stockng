@@ -1,6 +1,7 @@
 
 import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { Observable } from 'rxjs';
 
@@ -33,7 +34,7 @@ export class NamespacesuserComponent implements OnInit {
 
   @ViewChildren(NamespacesuserSortableDirective) headers: QueryList<NamespacesuserSortableDirective>;
 
-  constructor(public service: NamespacesuserService) {
+  constructor(public service: NamespacesuserService,private modalService: NgbModal) {
     this.tables$ = service.tables$;
     this.total$ = service.total$;
   }
@@ -71,6 +72,17 @@ export class NamespacesuserComponent implements OnInit {
     this.service.sortColumn = column;
     this.service.sortDirection = direction;
   }
+
+
+   /**
+   * Open modal
+   * @param content modal content
+   */
+  openModal(content: any) {
+    this.modalService.open(content);
+  }
+
+
 }
 
 
