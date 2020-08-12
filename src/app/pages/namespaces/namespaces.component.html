@@ -47,7 +47,7 @@
                 <tr *ngFor="let table of tables$ | async">
                   <td>
                   	<!--  <i class="far fa-check-square"></i>&nbsp;  -->
-                    <ngb-highlight class="text-primary pointer" routerLink="/namespaces/user" routerLinkActive="active" [result]="table.namespace" [term]="service.searchTerm"></ngb-highlight>
+                    <ngb-highlight class="text-primary pointer" routerLink="/bu/namespaces/user" routerLinkActive="active" [result]="table.namespace" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                   <td>
                     <ngb-highlight [result]="table.environ" [term]="service.searchTerm"></ngb-highlight>
