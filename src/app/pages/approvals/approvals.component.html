@@ -1,0 +1,184 @@
+<div class="container-fluid">
+  <app-page-title title="Approvals" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <!-- <h4 class="card-title">Alerts List</h4> -->
+         <!--  <p class="card-sub-title">
+            Example of datatable.
+          </p> -->
+          <div class="row mb-md-2">
+            <!-- <div class="col-sm-12 col-md-6">
+              <div class="dataTables_length" id="tickets-table_length"><label
+                  class="d-inline-flex align-items-center">Show
+                  <select name="tickets-table_length" aria-controls="tickets-table" name="pageSize"
+                    [(ngModel)]="service.pageSize"
+                    class="custom-select custom-select-sm form-control form-control-sm mx-2">
+                    <option [ngValue]="10">10</option>
+                    <option [ngValue]="25">25</option>
+                    <option [ngValue]="50">50</option>
+                    <option [ngValue]="100">100</option>
+                  </select> entries</label></div>
+            </div> -->
+            <!-- Search -->
+            <div class="col-sm-12 col-md-12">
+              <div id="tickets-table_filter" class="dataTables_filter text-md-right"><label
+                  class="d-inline-flex align-items-center">Search:
+                  <input type="text" name="searchTerm" class="form-control form-control-sm ml-2"
+                    aria-controls="tickets-table" [(ngModel)]="service.searchTerm"></label></div>
+            </div>
+            <!-- End search -->
+          </div>
+          <!-- Table -->
+          <div class="table-responsive">
+            <table id="basic-datatable"
+              class="table table-bordered dt-responsive nowrap datatables no-footer dtr-inline">
+              <thead>
+                <tr>
+                  <th sortable="requesttype" (sort)="onSort($event)">Request Type</th>
+                  <th sortable="purpose" (sort)="onSort($event)">Purpose</th>
+                  <th sortable="organization" class="stsrm"  (sort)="onSort($event)">Organization</th>
+                  <th sortable="status" class="stsrm"  (sort)="onSort($event)">Status</th>
+                  <th sortable="priority" (sort)="onSort($event)">Priority</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let table of tables$ | async">
+                  <td>
+                    <ngb-highlight class="text-primary" [result]="table.requesttype" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.purpose" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.organization" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.status" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.priority" [term]="service.searchTerm"></ngb-highlight>
+                     <div class="dropdown acalrtto" ngbDropdown placement="bottom-right">
+                    <a href="javascript: void(0);" class="dropdown-toggle card-drop" ngbDropdownToggle>
+                      <i class="mdi mdi-dots-horizontal font-size-18"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                     <a class="dropdown-item"  (click)="openModal(content)" href="javascript: void(0);">Approve</a>
+                     <a class="dropdown-item" href="javascript: void(0);">Reject</a>     
+                    </div>
+                  </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- End table -->
+          <div class="row justify-content-md-between align-items-md-center mt-2">
+            <div class="col-sm-12 col-md-5">
+              <div class="dataTables_info mb-2" id="tickets-table_info" role="status" aria-live="polite">Showing
+                {{service.startIndex}} to
+                {{service.endIndex}} of {{service.totalRecords}}
+                entries
+              </div>
+            </div>
+            <!-- Pagination -->
+            <div class="col-sm-12 col-md-5">
+              <div class="text-md-right float-md-right pagination-rounded">
+                <ngb-pagination [collectionSize]="total$ | async" [(page)]="service.page" [pageSize]="service.pageSize">
+                </ngb-pagination>
+              </div>
+            </div>
+            <!-- End Pagination -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Standard Modal -->
+<ng-template #content role="document" let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title mt-0">Namespace Apploval</h5>
+    <button type="button" class="close" aria-hidden="true" (click)="modal.dismiss('Cross click')">×</button>
+  </div>
+  <div class="modal-body">
+      <h4 class="card-title mb-4">Details</h4>
+        <div class="card">
+                <div class="card-body border p-3 rounded mt-6">
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-5">
+                                <p class="text-muted mb-2">Data Center</p>
+                            </div>
+                             <div class="col-sm-5">
+                                <p class="text-muted mb-2">AWS</p>
+                            </div>
+                        </div>
+                       <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-5">
+                              <p class="text-muted mb-2">CPU</p>
+                            </div>
+                             <div class="col-sm-5">
+                                <p class="text-muted mb-2">6 vCPU</p>
+                            </div>
+                        </div>
+                         <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-5">
+                              <p class="text-muted mb-2">Status</p>
+                            </div>
+                             <div class="col-sm-5">
+                                <p class="text-muted mb-2">Provisioned</p>
+                            </div>
+                        </div>
+                         <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-5">
+                              <p class="text-muted mb-2">Memory</p>
+                            </div>
+                             <div class="col-sm-5">
+                                <p class="text-muted mb-2">16 GB</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-5">
+                              <p class="text-muted mb-2">Cluster</p>
+                            </div>
+                            <div class="col-sm-5">
+                                <p class="text-muted mb-2">Finance</p>
+                            </div>
+                        </div>
+
+                </div>
+              
+            </div>  
+
+            <h4 class="card-title mb-4">Reason</h4>
+        <div class="card">
+                <div class="card-body border p-3 rounded mt-6">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <p class="text-muted mb-2">Allocation of Q1 budget for the credit card dept.</p>
+                            </div>
+                             
+                        </div>
+                      
+
+                </div>
+              
+            </div> 
+
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" (click)="modal.close('Close click')" class="btn btn-primary">Approve</button>
+    <button type="button" (click)="modal.close('Close click')" class="btn btn-primary">Reject</button>
+  </div>
+</ng-template>
+
+
+

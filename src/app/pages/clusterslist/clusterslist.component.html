@@ -1,0 +1,333 @@
+<div class="container-fluid">
+  <app-page-title title="Clusters" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+<div class="btnuser">
+	<!-- <span class="bx bx-plus-circle"></span> -->
+<button type="button" (click)="openModal(content)" class="btn btn-info btnuadd">Create</button>
+</div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <!-- <h4 class="card-title">Alerts List</h4> -->
+         <!--  <p class="card-sub-title">
+            Example of datatable.
+          </p> -->
+          <div class="row mb-md-2">
+            <!-- <div class="col-sm-12 col-md-6">
+              <div class="dataTables_length" id="tickets-table_length"><label
+                  class="d-inline-flex align-items-center">Show
+                  <select name="tickets-table_length" aria-controls="tickets-table" name="pageSize"
+                    [(ngModel)]="service.pageSize"
+                    class="custom-select custom-select-sm form-control form-control-sm mx-2">
+                    <option [ngValue]="10">10</option>
+                    <option [ngValue]="25">25</option>
+                    <option [ngValue]="50">50</option>
+                    <option [ngValue]="100">100</option>
+                  </select> entries</label></div>
+            </div> -->
+            <!-- Search -->
+            <div class="col-sm-12 col-md-12">
+              <div id="tickets-table_filter" class="dataTables_filter text-md-right"><label
+                  class="d-inline-flex align-items-center">Search:
+                  <input type="text" name="searchTerm" class="form-control form-control-sm ml-2"
+                    aria-controls="tickets-table" [(ngModel)]="service.searchTerm"></label></div>
+            </div>
+            <!-- End search -->
+          </div>
+          <!-- Table -->
+          <div class="table-responsive">
+            <table id="basic-datatable"
+              class="table table-bordered dt-responsive nowrap datatables no-footer dtr-inline">
+              <thead>
+                <tr>
+                  <th sortable="cluster" (sort)="onSort($event)">Cluster</th>
+                  <th sortable="organization" class="stsrm"  (sort)="onSort($event)">Organization</th>
+                  <th sortable="cp" class="stsrm"  (sort)="onSort($event)">CP</th>
+                  <th sortable="memory" (sort)="onSort($event)">Memory</th>
+                  <th sortable="storage" (sort)="onSort($event)">Storage</th>
+                  <th sortable="location" (sort)="onSort($event)">Location</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr *ngFor="let table of tables$ | async">
+                  <td>
+                  	<!--  <i class="far fa-check-square"></i>&nbsp;  -->
+                    <ngb-highlight [result]="table.cluster" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.organization" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.cp" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                   <td>
+                    <ngb-highlight [result]="table.memory" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                   <td>
+                    <ngb-highlight [result]="table.storage" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.location" [term]="service.searchTerm"></ngb-highlight>
+                   </td>
+
+                  <td>
+                     <div class="dropdown acalrtto" ngbDropdown placement="bottom-right">
+                    <a href="javascript: void(0);" class="dropdown-toggle card-drop" ngbDropdownToggle>
+                      <i class="mdi mdi-dots-horizontal font-size-18"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                     <a class="dropdown-item" href="javascript: void(0);">Request Quota Increase</a>
+                     <a class="dropdown-item" href="javascript: void(0);">Ignore</a>     
+                    </div>
+                  </div>
+                  </td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- End table -->
+          <div class="row justify-content-md-between align-items-md-center mt-2">
+            <div class="col-sm-12 col-md-5">
+              <div class="dataTables_info mb-2" id="tickets-table_info" role="status" aria-live="polite">Showing
+                {{service.startIndex}} to
+                {{service.endIndex}} of {{service.totalRecords}}
+                entries
+              </div>
+            </div>
+            <!-- Pagination -->
+            <div class="col-sm-12 col-md-5">
+              <div class="text-md-right float-md-right pagination-rounded">
+                <ngb-pagination [collectionSize]="total$ | async" [(page)]="service.page" [pageSize]="service.pageSize">
+                </ngb-pagination>
+              </div>
+            </div>
+            <!-- End Pagination -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <div class="card">
+ <div class="card-body">
+ 	<h4 class="card-title mb-4">Finance Cluster Details</h4>
+     <div class="row">
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body border p-3 rounded mt-6">
+                        <div class="row">
+                           	<div class="col-sm-2"></div>
+                            <div class="col-sm-5">
+                                <p class="text-muted mb-2">Allocated</p>
+                            </div>
+                             <div class="col-sm-5">
+                                <p class="text-muted mb-2"></p>
+                            </div>
+                        </div>
+                       <div class="row">
+                           	<div class="col-sm-2"></div>
+                            <div class="col-sm-5">
+                            	<p class="text-muted mb-2">Compute</p>
+                            </div>
+                            <div class="col-sm-5">
+                                <p class="text-muted mb-2">30GHz</p>
+                            </div>
+                        </div>
+                         <div class="row">
+                           	<div class="col-sm-2"></div>
+                            <div class="col-sm-5">
+                            	<p class="text-muted mb-2">Memory</p>
+                            </div>
+                            <div class="col-sm-5">
+                                <p class="text-muted mb-2">16 GB</p>
+                            </div>
+                        </div>
+                         <div class="row">
+                           	<div class="col-sm-2"></div>
+                            <div class="col-sm-5">
+                            	<p class="text-muted mb-2">Storage</p>
+                            </div>
+                             <div class="col-sm-5">
+                                <p class="text-muted mb-2">100 GB</p>
+                            </div>
+                        </div>
+                     
+                </div>
+              
+            </div>         
+        </div>  
+
+         <div class="col-xl-6">
+
+            <div class="card">
+                <div class="card-body border p-3 rounded mt-6">
+
+                	 <div class="row">
+                           	<div class="col-sm-2"></div>
+                            <div class="col-sm-5">
+                                <p class="text-muted mb-2">Available</p>
+                            </div>
+                             <div class="col-sm-5">
+                                <p class="text-muted mb-2"></p>
+                            </div>
+                        </div>
+                       <div class="row">
+                           	<div class="col-sm-2"></div>
+                            <div class="col-sm-5">
+                            	<p class="text-muted mb-2">Compute</p>
+                            </div>
+                            <div class="col-sm-5">
+                                <p class="text-muted mb-2">15 GHz</p>
+                            </div>
+                        </div>
+                         <div class="row">
+                           	<div class="col-sm-2"></div>
+                            <div class="col-sm-5">
+                            	<p class="text-muted mb-2">Memory</p>
+                            </div>
+                            <div class="col-sm-5">
+                                <p class="text-muted mb-2">8 GB</p>
+                            </div>
+                        </div>
+                         <div class="row">
+                           	<div class="col-sm-2"></div>
+                            <div class="col-sm-5">
+                            	<p class="text-muted mb-2">Storage</p>
+                            </div>
+                             <div class="col-sm-5">
+                                <p class="text-muted mb-2">50 GB</p>
+                            </div>
+                        </div>
+                                           
+                </div>
+              
+            </div>         
+        </div>   
+      </div>
+
+       <div class="col-xl-12">
+
+            <div class="card">
+                <div class="card-body border p-3 rounded mt-6">
+
+                	 <div class="row">
+                           	<div class="col-sm-3">Status</div>
+                            <div class="col-sm-3">
+                                <span class="badge badge-success ml-1 align-bottom">Provisioning..</span>
+                            </div>
+                             <div class="col-sm-2">
+                                <p class="text-muted mb-2">Purpose</p>
+                            </div>
+                             <div class="col-sm-2">
+                                <p class="text-muted mb-2">Staging</p>
+                            </div>
+                             <div class="col-sm-2">
+                               <span class="badge badge-success ml-1 align-bottom">More</span>
+                            </div>
+                        </div>                     
+                                           
+                </div>
+              
+            </div>         
+        </div> 
+</div>
+</div>
+
+    <!-- end row -->
+</div>
+
+<!-- Standard Modal -->
+<ng-template #content role="document" let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title mt-0">Create K8s Cluster</h5>
+    <button type="button" class="close" aria-hidden="true" (click)="modal.dismiss('Cross click')">×</button>
+  </div>
+  <div class="modal-body">
+        <div class="form-group row">
+            <label for="example-text-input" class="col-md-4 col-form-label">Name</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="cluster 123" id="example-text-input">
+            </div>
+      </div>
+
+      <div class="form-group row">
+            <label class="col-md-4 col-form-label">Organization</label>
+            <div class="col-md-8">
+              <select class="form-control">
+                <option>Finance</option>
+                <option>Lending</option>
+              </select>
+            </div>
+      </div>
+
+      <div class="form-group row">
+            <label class="col-md-4 col-form-label">Location</label>
+            <div class="col-md-8">
+              <select class="form-control">
+                <option>AWS</option>
+                <option>DC1</option>
+              </select>
+            </div>
+      </div>
+
+       <div class="form-group row">
+            <label class="col-md-4 col-form-label">Region</label>
+            <div class="col-md-8">
+              <select class="form-control">
+                <option>US EAST</option>
+                <option>US WEST</option>
+              </select>
+            </div>
+      </div>
+
+
+       <div class="form-group row">
+            <label class="col-md-4 col-form-label">Mchine Type</label>
+            <div class="col-md-8">
+              <select class="form-control">
+                <option>12 medium</option>
+                 <option>24 medium</option>
+              </select>
+            </div>
+      </div>
+
+     <div class="form-group row">
+            <label class="col-md-4 col-form-label">Cores</label>
+            <div class="col-md-8">
+              <select class="form-control">
+                <option>12 vCPU</option>
+                 <option>24 vCPU</option>
+              </select>
+            </div>
+      </div>
+
+      <div class="form-group row">
+            <label class="col-md-4 col-form-label">Memory</label>
+            <div class="col-md-8">
+              <select class="form-control">
+                <option>8 GB</option>
+                 <option>16 GB</option>
+              </select>
+            </div>
+      </div>
+
+
+       <div class="form-group row">
+            <label class="col-md-4 col-form-label">Cluster Version</label>
+            <div class="col-md-8">
+              <select class="form-control">
+                <option>11.0</option>
+                 <option>16.0</option>
+              </select>
+            </div>
+      </div>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    <button type="button" class="btn btn-primary">Create</button>
+  </div>
+</ng-template>
