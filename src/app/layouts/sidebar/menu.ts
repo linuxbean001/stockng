@@ -64,6 +64,61 @@ export const BUMENU: MenuItem[] = [
 
 
 
+export const SAMENU: MenuItem[] = [
+    {
+        id: 1,
+        label: 'Menu',
+        isTitle: true
+    },
+     {
+        id: 2,
+        label: 'Dashboard',
+        icon: 'bx bx-home-circle',
+        link: '/sa/dashboard',
+    },{
+        id: 4,
+        label: 'Cluster',
+        icon: 'bx bxs-book-alt',
+        link: '/sa/cluster',
+    },{
+        id: 3,
+        label: 'Alerts',
+        icon: 'bx bx-arrow-to-top',
+        link: '/sa/alerts',
+    },{
+        id: 4,
+        label: 'Clusters',
+        icon: 'bx bx-planet',
+        link: '/sa/clusterslist',
+    },{
+        id: 5,
+        label: 'Namespaces',
+        icon: 'bx bx-baseball',
+        link: '/sa/namespaces/list',
+    },{
+        id: 6,
+        label: 'Approvals',
+        icon: 'bx bx-task',
+        link: '/sa/approvals',
+    },{
+        id: 7,
+        label: 'Container Registries',
+        icon: 'bx bx-arrow-to-left',
+        link: '/sa/containerregistries',
+    },{
+        id: 8,
+        label: 'Organizations',
+        icon: 'bx bx-badge',
+        link: '/sa/organizations',
+    },{
+        id: 9,
+        label: 'Users',
+        icon: 'bx bx-user-circle',
+        link: '/sa/users',
+    }
+];
+
+
 
 
 
