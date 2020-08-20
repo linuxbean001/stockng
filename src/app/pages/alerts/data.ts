@@ -1,24 +1,44 @@
 const tableData = [
   {
-    alert: 'cluster 3 reaching 90%',
+    alert: 'Cluster 3 reaching 90%',
     organization: 'Finance',
-    level: 'Mediu',
+    level: 'Medium',
     action: 'Increase Quota',
   },{
-    alert: 'cluster 3 unreachable',
+    alert: 'Cluster 3 unreachable',
     organization: 'HR',
-    level: 'Critic',
-    action: 'check health odf',
+    level: 'Critical',
+    action: 'Check health odf',
+  },{
+    alert: 'Cluster 3 reaching 90%',
+    organization: 'Finance',
+    level: 'Medium',
+    action: 'Increase Quota',
+  },{
+    alert: 'Cluster 3 unreachable',
+    organization: 'HR',
+    level: 'Critical',
+    action: 'Check health odf',
   }, {
-    alert: 'cluster 3 reaching 90%',
+    alert: 'Cluster 3 reaching 90%',
     organization: 'Finance',
-    level: 'Mediu',
+    level: 'Medium',
     action: 'Increase Quota',
   },{
-    alert: 'cluster 3 unreachable',
+    alert: 'Cluster 3 unreachable',
     organization: 'HR',
-    level: 'Critic',
-    action: 'check health odf',
+    level: 'Critical',
+    action: 'Check health odf',
+  },{
+    alert: 'Cluster 3 reaching 90%',
+    organization: 'Finance',
+    level: 'Medium',
+    action: 'Increase Quota',
+  },{
+    alert: 'Cluster 3 unreachable',
+    organization: 'HR',
+    level: 'Critical',
+    action: 'Check health odf',
   }
 ];
 

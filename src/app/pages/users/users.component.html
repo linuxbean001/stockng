@@ -1,7 +1,7 @@
 <div class="container-fluid">
-  <app-page-title title="Users" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <app-page-title title="" [breadcrumbItems]="breadCrumbItems"></app-page-title>
 <div class="btnuser">
-<button type="button" (click)="openModal(content)" class="btn btn-info btnuadd">Add User</button>
+<button type="button" (click)="openModal(content)" class="btn btn-info btn-sm btnuadd">Add User</button>
 </div>
   <div class="row">
     <div class="col-12">
@@ -98,14 +98,14 @@
     <div class="form-group row">
             <label for="example-text-input" class="col-md-2 col-form-label">Email</label>
             <div class="col-md-10">
-              <input class="form-control" type="text" value="john@abc.com" id="example-text-input">
+              <input class="form-control form-control-sm" type="text" value="john@abc.com" id="example-text-input">
             </div>
       </div>
 
       <div class="form-group row">
             <label class="col-md-2 col-form-label">Role</label>
             <div class="col-md-10">
-              <select class="form-control">
+              <select class="form-control form-control-sm">
                 <option>Org Admin</option>
                 <option>Developer</option>
               </select>
