@@ -57,7 +57,7 @@ export const BUMENU: MenuItem[] = [
         id: 11,
         label: 'Workloads',
         icon: 'bx bx-sticker',
-        link: '/cluster/nodes',
+        link: '/bu/workloads',
     }
 ];
 
