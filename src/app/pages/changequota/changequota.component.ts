@@ -7,6 +7,8 @@ import { Table } from './changequota.model';
 
 import { tableData } from './data';
 
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { ChangequotaService } from './changequota.service';
 import { ChangequotaSortableDirective, SortEvent } from './changequota-sortable.directive';
 
@@ -32,7 +34,7 @@ export class ChangequotaComponent implements OnInit {
 
   @ViewChildren(ChangequotaSortableDirective) headers: QueryList<ChangequotaSortableDirective>;
 
-  constructor(public service: ChangequotaService) {
+  constructor(public service: ChangequotaService,private modalService: NgbModal) {
     this.tables$ = service.tables$;
     this.total$ = service.total$;
   }
@@ -52,6 +54,14 @@ export class ChangequotaComponent implements OnInit {
    */
   _fetchData() {
     this.tableData = tableData;
+  }
+
+  /**
+   * Open modal
+   * @param content modal content
+   */
+  openModal(content: any) {
+    this.modalService.open(content);
   }
 
   /**

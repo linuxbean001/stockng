@@ -1,6 +1,6 @@
 <div class="container-fluid">
 <app-page-title title="" [breadcrumbItems]="breadCrumbItems"></app-page-title>
-<div class="test-rightbtn"><button type="button" class="btn btn-info btn-sm">Request a Namespace</button></div>
+<div class="test-rightbtn"><button type="button" (click)="openModal(content)" class="btn btn-info btn-sm">Request a Namespace</button></div>
   <div class="row">
     <div class="col-12">
       <div class="card">
@@ -38,9 +38,9 @@
               <thead>
                 <tr>
                   <th sortable="namespace" (sort)="onSort($event)">Namespaces</th>
-                  <th sortable="environ" class="stsrm"  (sort)="onSort($event)">Environ</th>
-                  <th sortable="created" class="stsrm"  (sort)="onSort($event)">Created</th>
-                  <th sortable="loca" (sort)="onSort($event)">Loca</th>
+                  <th sortable="environ" class="stsrm"  (sort)="onSort($event)">Purpose</th>
+                  <th sortable="created" class="stsrm"  (sort)="onSort($event)">CreatedDate</th>
+                  <th sortable="loca" (sort)="onSort($event)">Location</th>
                 </tr>
               </thead>
               <tbody>
@@ -85,3 +85,72 @@
     </div>
   </div>
 </div>
+
+
+ <!-- Standard Modal -->
+<ng-template #content role="document" let-modal>
+  <div class="modal-header">
+    <h6 class="modal-title mt-0">Request for Kubernetes Namespace</h6>
+    <button type="button" class="close" aria-hidden="true" (click)="modal.dismiss('Cross click')">×</button>
+  </div>
+  <div class="modal-body">
+  
+
+      <div class="form-group row">
+            <label class="col-md-4 col-form-label">Purpose</label>
+            <div class="col-md-8">
+              <select class="form-control form-control-sm">
+                <option>Test</option>
+                <option>Test1</option>
+              </select>
+            </div>
+      </div>
+
+        <div class="form-group row">
+            <label class="col-md-4 col-form-label">Locaion</label>
+            <div class="col-md-8">
+              <select class="form-control form-control-sm">
+                <option>DC1</option>
+                <option>DC2</option>
+              </select>
+            </div>
+      </div>
+
+       <div class="form-group row">
+            <label for="example-text-input" class="col-md-4 col-form-label">CPU</label>
+            <div class="col-md-8">
+              <input class="form-control form-control-sm" type="text" value="16 vCPU" id="example-text-input">
+            </div>
+      </div>
+
+
+        <div class="form-group row">
+            <label class="col-md-4 col-form-label">Memory</label>
+            <div class="col-md-8">
+              <select class="form-control form-control-sm">
+                <option>16 GB</option>
+                <option>32 GB</option>
+              </select>
+            </div>
+      </div>
+
+        <div class="form-group row">
+            <label class="col-md-4 col-form-label">Storage</label>
+            <div class="col-md-8">
+              <select class="form-control form-control-sm">
+                <option>100 GB</option>
+                <option>500 GB</option>
+              </select>
+            </div>
+      </div>
+
+      
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light btn-sm" (click)="modal.close('Close click')">Close</button>
+    <button type="button" class="btn btn-primary btn-sm">Request Namespace</button>
+  </div>
+</ng-template>
+
+
