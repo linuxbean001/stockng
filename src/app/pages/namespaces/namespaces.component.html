@@ -47,7 +47,8 @@
                 <tr *ngFor="let table of tables$ | async">
                   <td>
                   	<!--  <i class="far fa-check-square"></i>&nbsp;  -->
-                    <ngb-highlight class="text-primary pointer" routerLink="/bu/namespaces/user" routerLinkActive="active" [result]="table.namespace" [term]="service.searchTerm"></ngb-highlight>
+                    <!-- <ngb-highlight class="text-primary pointer" routerLink="/bu/namespaces/user" routerLinkActive="active" [result]="table.namespace" [term]="service.searchTerm"></ngb-highlight> -->
+                     <ngb-highlight  [result]="table.namespace" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                   <td>
                     <ngb-highlight [result]="table.environ" [term]="service.searchTerm"></ngb-highlight>
@@ -97,8 +98,8 @@
   
 
       <div class="form-group row">
-            <label class="col-md-4 col-form-label">Purpose</label>
-            <div class="col-md-8">
+            <label class="col-md-2 col-form-label">Purpose</label>
+            <div class="col-md-10">
               <select class="form-control form-control-sm">
                 <option>Test</option>
                 <option>Test1</option>
@@ -107,8 +108,8 @@
       </div>
 
         <div class="form-group row">
-            <label class="col-md-4 col-form-label">Locaion</label>
-            <div class="col-md-8">
+            <label class="col-md-2 col-form-label">Locaion</label>
+            <div class="col-md-10">
               <select class="form-control form-control-sm">
                 <option>DC1</option>
                 <option>DC2</option>
@@ -117,16 +118,16 @@
       </div>
 
        <div class="form-group row">
-            <label for="example-text-input" class="col-md-4 col-form-label">CPU</label>
-            <div class="col-md-8">
+            <label for="example-text-input" class="col-md-2 col-form-label">CPU</label>
+            <div class="col-md-10">
               <input class="form-control form-control-sm" type="text" value="16 vCPU" id="example-text-input">
             </div>
       </div>
 
 
         <div class="form-group row">
-            <label class="col-md-4 col-form-label">Memory</label>
-            <div class="col-md-8">
+            <label class="col-md-2 col-form-label">Memory</label>
+            <div class="col-md-10">
               <select class="form-control form-control-sm">
                 <option>16 GB</option>
                 <option>32 GB</option>
@@ -135,8 +136,8 @@
       </div>
 
         <div class="form-group row">
-            <label class="col-md-4 col-form-label">Storage</label>
-            <div class="col-md-8">
+            <label class="col-md-2 col-form-label">Storage</label>
+            <div class="col-md-10">
               <select class="form-control form-control-sm">
                 <option>100 GB</option>
                 <option>500 GB</option>

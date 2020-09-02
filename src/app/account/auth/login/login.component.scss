@@ -4,4 +4,70 @@
   .molog {
    display: none;
   }
+  .iconcss{
+    position: absolute;
+    z-index: 99;
+    font-size: 20px;
+    top: 157px;
+    left: 38px;
+}
+
+.iconcsssecound{
+       position: absolute;
+    z-index: 99;
+    font-size: 20px;
+    top: 223px;
+    left: 39px;
+}
+}
+
+@media only screen and (max-width: 768px) {
+   .iconcss{
+    position: absolute;
+    z-index: 99;
+    font-size: 20px;
+    top: 172px;
+    left: 38px;
+}
+
+.iconcsssecound{
+       position: absolute;
+    z-index: 99;
+    font-size: 20px;
+    top: 223px;
+    left: 39px;
+}
+}
+
+
+
+
+
+.loginpageredis{
+	position: relative;
+    border-radius: 20px;
+}
+
+.inputpading{
+	padding-left: 34px;
+	position: relative;
+    border-radius: 20px;
+}
+
+
+.iconcss{
+  position: absolute;
+    z-index: 99;
+    font-size: 20px;
+    top: 157	px;
+    left: 38px;
+}
+
+
+.iconcsssecound{
+       position: absolute;
+    z-index: 99;
+    font-size: 20px;
+    top: 209px;
+    left: 39px;
 }

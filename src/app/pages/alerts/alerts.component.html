@@ -46,16 +46,7 @@
                 <tr *ngFor="let table of tables$ | async">
                   <td>
                   	<!--  <i class="far fa-check-square"></i>&nbsp;  -->
-                    <div class="dropdown acalrtto" ngbDropdown placement="bottom-right">
-                    <a href="javascript: void(0);" class="dropdown-toggle card-drop" ngbDropdownToggle>
-                      <i class="mdi mdi-dots-horizontal font-size-18"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-left" ngbDropdownMenu>
-                     <a class="dropdown-item" href="javascript: void(0);">Request Quota Increase</a>
-                     <a class="dropdown-item" href="javascript: void(0);">Ignore</a>     
-                    </div>
-                    </div>
-                    <ngb-highlight class="alrttestnow" [result]="table.alert" [term]="service.searchTerm"></ngb-highlight>
+                    <ngb-highlight  [result]="table.alert" [term]="service.searchTerm"></ngb-highlight>
                   </td>
                   <td>
                     <ngb-highlight [result]="table.organization" [term]="service.searchTerm"></ngb-highlight>
@@ -65,6 +56,15 @@
                   </td>
                   <td>
                     <ngb-highlight [result]="table.action" [term]="service.searchTerm"></ngb-highlight>
+                     <div class="dropdown acalrtto" ngbDropdown placement="bottom-right">
+                    <a href="javascript: void(0);" class="dropdown-toggle card-drop" ngbDropdownToggle>
+                      <i class="mdi mdi-dots-horizontal font-size-18"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                     <a class="dropdown-item" href="javascript: void(0);">Request Quota Increase</a>
+                     <a class="dropdown-item" href="javascript: void(0);">Ignore</a>     
+                    </div>
+                    </div>
                   </td>
                 </tr>
               </tbody>
