@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {gaugeChart,gaugeMemory,gaugeStorage } from './data';
+import {gaugeChart,gaugeMemory,gaugeStorage,statData } from './data';
 
 import { ChartType } from './echart.model';
 
@@ -20,6 +20,7 @@ export class BudashboardComponent implements OnInit {
   gaugeChart: ChartType;
   gaugeMemory: ChartType;
   gaugeStorage: ChartType;
+  statData;
 
   // bread crumb items
   breadCrumbItems: Array<{}>;
@@ -38,6 +39,7 @@ export class BudashboardComponent implements OnInit {
     this.gaugeChart = gaugeChart;
     this.gaugeMemory = gaugeMemory;
     this.gaugeStorage = gaugeStorage;
+    this.statData = statData;
   }
 
 }

@@ -80,4 +80,19 @@ const gaugeStorage: ChartType = {
     ]
 }
 
-export { gaugeChart,gaugeMemory,gaugeStorage};
+
+const statData = [{
+    icon: 'bx bx-copy-alt',
+    title: 'CPU in GHz',
+    value: '1235'
+}, {
+    icon: 'bx bx-archive-in',
+    title: 'Memory GB',
+    value: '3522'
+}, {
+    icon: 'bx bx-purchase-tag-alt',
+    title: 'Storage in TB',
+    value: '16'
+}];
+
+export { gaugeChart,gaugeMemory,gaugeStorage,statData};
