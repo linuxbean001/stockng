@@ -35,11 +35,14 @@ import { ApprovalsComponent } from './approvals/approvals.component';
 import { ClusterslistComponent } from './clusterslist/clusterslist.component';
 import { AuthGuard } from '../core/guards/auth.guard';
 const routes: Routes = [
-  { path: '', redirectTo: 'sa/dashboard' },
-  { path: 'dashboard', component: BudashboardComponent,canActivate: [AuthGuard]},
-  { path: 'bu/dashboard', component: BudashboardComponent },
+  { path: '', redirectTo: 'bu/dashboard' },
+  { path: 'dashboard', component: NodesdetailsComponent,canActivate: [AuthGuard]},
+  { path: 'bu/dashboard', component: NodesdetailsComponent,canActivate: [AuthGuard] },
   { path: 'bu/containerregistry', component: ContainerregistryComponent },
+  { path: 'bus/dashboard', component: BudashboardComponent },
+  
   { path: 'cluster/namespaces', component: NamespacesComponent },
+  { path: 'dashboardd', component: DefaultComponent },
   { path: 'bu/namespaces/list', component: NamespacesComponent },
   { path: 'bu/changequota', component: ChangequotaComponent },
   { path: 'bu/namespaces/user', component: NamespacesuserComponent },

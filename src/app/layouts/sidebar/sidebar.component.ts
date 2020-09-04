@@ -193,11 +193,10 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnChanges {
   */
   initialize(): void {
 
-    this.menuItems = SAMENU;
-   //this.menuItems = BUMENU;
+    //this.menuItems = SAMENU;
+     this.menuItems = BUMENU;
     //this.menuItems = MENU;
   }
-
   /**
    * Returns true or false if given menu item has child or not
    * @param item menuItem

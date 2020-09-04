@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
 
 import { Table } from './namespaces.model';
 
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { tableData } from './data';
 
 import { NamespacesService } from './namespaces.service';
@@ -33,7 +35,7 @@ export class NamespacesComponent implements OnInit {
 
   @ViewChildren(NamespacesSortableDirective) headers: QueryList<NamespacesSortableDirective>;
 
-  constructor(public service: NamespacesService) {
+  constructor(public service: NamespacesService,private modalService: NgbModal) {
     this.tables$ = service.tables$;
     this.total$ = service.total$;
   }
@@ -54,6 +56,15 @@ export class NamespacesComponent implements OnInit {
   _fetchData() {
     this.tableData = tableData;
   }
+
+   /**
+   * Open modal
+   * @param content modal content
+   */
+  openModal(content: any) {
+    this.modalService.open(content);
+  }
+
 
   /**
    * Sort table data

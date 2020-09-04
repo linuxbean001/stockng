@@ -10,9 +10,9 @@ export const BUMENU: MenuItem[] = [
     },
      {
         id: 2,
-        label: 'Dashboards',
+        label: 'Dashboard',
         icon: 'bx bx-home-circle',
-        link: '/bu/dashboard',
+        link: '/sa/dashboard',
     },{
         id: 3,
         label: 'Alerts',
@@ -57,7 +57,7 @@ export const BUMENU: MenuItem[] = [
         id: 11,
         label: 'Workloads',
         icon: 'bx bx-sticker',
-        link: '/bu/Workloads',
+        link: '/bu/workloads',
     }
 ];
 

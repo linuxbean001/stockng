@@ -93,7 +93,7 @@ const overlappingBarChart: ChartType = {
         ]
     },
     options: {
-        seriesBarDistance: 10,
+        seriesBarDistance: 10, 
         height: 300
     },
     type: 'Bar',
