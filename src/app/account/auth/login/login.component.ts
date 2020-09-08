@@ -69,7 +69,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
                 data => {
 
                 console.log('hello my response',data);
-                    this.router.navigate(['/bu/dashboard']);
+                    this.router.navigate(['/bus/dashboard']);
                 },
                 error => {
                     this.error = error;
