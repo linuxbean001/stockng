@@ -1,31 +1,31 @@
 <div class="container-fluid budashboardcs">
-  <app-page-title title="BU Dashboard" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <!-- <app-page-title title="BU Dashboard" [breadcrumbItems]="breadCrumbItems"></app-page-title> -->
 
 
 <div class="row">
   
       <div class="col-md-4 text-center">
       <div class="card card-body">
-        <h5 class="card-title mt-0">Total Memory</h5>
+        <h5 class="card-title1">Total Memory</h5>
         <h3 class="card-title mt-0">1024 GB</h3>         
-           <ngb-progressbar [value]="1024" type="danger" [max]="1500" class="demo-progress"></ngb-progressbar>           
+           <ngb-progressbar [value]="1024" type="danger" [max]="1500" class="demo-progress" height=".44rem"></ngb-progressbar>           
       </div>
     </div>
 
 
      <div class="col-md-4 text-center">
       <div class="card card-body">
-        <h5 class="card-title mt-0">Total Storage</h5>
+        <h5 class="card-title1">Total Storage</h5>
         <h3 class="card-title mt-0">3 TB</h3>           
-           <ngb-progressbar [value]="3" type="success" [max]="10" class="demo-progress"></ngb-progressbar>           
+           <ngb-progressbar [value]="3" type="success" [max]="10" class="demo-progress" height=".44rem"></ngb-progressbar>           
       </div>
     </div>
 
  <div class="col-md-4 text-center">
       <div class="card card-body">
-        <h5 class="card-title mt-0">Total CPU</h5>
+        <h5 class="card-title1">Total CPU</h5>
         <h3 class="card-title mt-0">322 vCPU</h3>           
-           <ngb-progressbar [value]="322" type="success" [max]="650" class="demo-progress"></ngb-progressbar>           
+           <ngb-progressbar [value]="322" type="success" [max]="650" class="demo-progress" height=".44rem"></ngb-progressbar>           
       </div>
     </div>
 
@@ -42,7 +42,7 @@
           <div class="card-body"> 
             <h4 class="card-title ">Namespace1</h4>
             <div class="col-lg-12">
-              <div class="col-lg-6" style="float: left;margin-top: 100px;">
+              <div class="col-lg-6" style="float: left;margin-top: 5px;">
                 <apx-chart dir="ltr" class="apex-charts" [series]="monthlyEarningChart.series"
                   [chart]="monthlyEarningChart.chart" [legend]="monthlyEarningChart.legend"
                   [colors]="monthlyEarningChart.colors" [labels]="monthlyEarningChart.labels"
@@ -54,7 +54,7 @@
                 </div>
                   <!-- <div  echarts [options]="gaugeChart" class="demo-chart"></div>  -->
               </div>
-            <div class="col-lg-6 columnChart" style="float: right;">
+            <div class="col-lg-6 columnChart">
             <apx-chart class="apex-charts" dir="ltr" [series]="columnlabelChart.series" [chart]="columnlabelChart.chart" [title]="columnlabelChart.title"
             [plotOptions]="columnlabelChart.plotOptions" [yaxis]="columnlabelChart.yaxis" [stroke]="columnlabelChart.stroke"
             [dataLabels]="columnlabelChart.dataLabels" [xaxis]="columnlabelChart.xaxis"
@@ -75,7 +75,7 @@
           <div class="card-body"> 
             <h4 class="card-title ">Namespace2</h4>
             <div class="col-lg-12">
-              <div class="col-lg-6" style="float: left;margin-top: 100px;">
+              <div class="col-lg-6" style="float: left;margin-top: 5px;">
                 <apx-chart dir="ltr" class="apex-charts" [series]="monthlyEarningChart.series"
                   [chart]="monthlyEarningChart.chart" [legend]="monthlyEarningChart.legend"
                   [colors]="monthlyEarningChart.colors" [labels]="monthlyEarningChart.labels"
@@ -87,7 +87,7 @@
                 </div>
                   <!-- <div  echarts [options]="gaugeChart" class="demo-chart"></div>  -->
               </div>
-            <div class="col-lg-6" style="float: right;">
+            <div class="col-lg-6 columnChart">
             <apx-chart class="apex-charts" dir="ltr" [series]="columnlabelChart.series" [chart]="columnlabelChart.chart" [title]="columnlabelChart.title"
             [plotOptions]="columnlabelChart.plotOptions" [yaxis]="columnlabelChart.yaxis" [stroke]="columnlabelChart.stroke"
             [dataLabels]="columnlabelChart.dataLabels" [xaxis]="columnlabelChart.xaxis"
@@ -108,7 +108,7 @@
           <div class="card-body"> 
             <h4 class="card-title ">Namespace3</h4>
             <div class="col-lg-12">
-              <div class="col-lg-6" style="float: left;margin-top: 100px;">
+              <div class="col-lg-6" style="float: left;margin-top: 5px;">
                 <apx-chart dir="ltr" class="apex-charts" [series]="monthlyEarningChart.series"
                   [chart]="monthlyEarningChart.chart" [legend]="monthlyEarningChart.legend"
                   [colors]="monthlyEarningChart.colors" [labels]="monthlyEarningChart.labels"
@@ -120,7 +120,7 @@
                 </div>
                   <!-- <div  echarts [options]="gaugeChart" class="demo-chart"></div>  -->
               </div>
-            <div class="col-lg-6" style="float: right;">
+            <div class="col-lg-6 columnChart">
             <apx-chart class="apex-charts" dir="ltr" [series]="columnlabelChart.series" [chart]="columnlabelChart.chart" [title]="columnlabelChart.title"
             [plotOptions]="columnlabelChart.plotOptions" [yaxis]="columnlabelChart.yaxis" [stroke]="columnlabelChart.stroke"
             [dataLabels]="columnlabelChart.dataLabels" [xaxis]="columnlabelChart.xaxis"
@@ -150,10 +150,10 @@
     <div class="col-lg-12">
       <div class="card">
         <div class="card-body">
-         <!--  <h4 class="card-title">Condition</h4> -->
-          <div class="table-responsive">
+          <h4 class="card-title">Workloads</h4>
+          <div class="table-responsive" style="margin-top: 15px;">
             <table id="basic-datatable"
-              class="table table-bordered dt-responsive nowrap datatables no-footer dtr-inline">
+              class="table table-bordered table-striped dt-responsive nowrap datatables no-footer dtr-inline">
               <thead>
                 <tr>
                   <th sortable="pod" (sort)="onSort($event)">POD Name</th>

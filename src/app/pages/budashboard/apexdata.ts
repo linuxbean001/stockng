@@ -2,7 +2,7 @@ import { ApexChartType } from './apex.model';
 
 const columnlabelChart: ApexChartType = {
     chart: {
-        height: 260,
+        height: 190,
         type: 'bar',
         toolbar: {
             show: false
@@ -61,7 +61,7 @@ const columnlabelChart: ApexChartType = {
 };
 const monthlyEarningChart: ApexChartType = {
     chart: {
-        height: 200,
+        height: 170,
         type: 'radialBar',
         offsetY: -10
     },
@@ -102,7 +102,7 @@ const monthlyEarningChart: ApexChartType = {
     stroke: {
         dashArray: 4,
     },
-    series: [50],
+    series: [75],
     labels: ['CPU'],
 };
 

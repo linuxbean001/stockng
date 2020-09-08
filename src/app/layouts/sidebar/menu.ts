@@ -12,7 +12,7 @@ export const BUMENU: MenuItem[] = [
         id: 2,
         label: 'Dashboard',
         icon: 'bx bx-home-circle',
-        link: '/bus/dashboard',
+        link: '/bu/dashboard',
     },{
         id: 3,
         label: 'Alerts',

@@ -37,7 +37,7 @@ import { AuthGuard } from '../core/guards/auth.guard';
 const routes: Routes = [
   { path: '', redirectTo: 'bu/dashboard' },
   { path: 'dashboard', component: NodesdetailsComponent,canActivate: [AuthGuard]},
-  { path: 'bu/dashboard', component: NodesdetailsComponent,canActivate: [AuthGuard] },
+  { path: 'bu/dashboard', component: BudashboardComponent,canActivate: [AuthGuard] },
   { path: 'bu/containerregistry', component: ContainerregistryComponent },
   { path: 'bus/dashboard', component: BudashboardComponent },
   
