@@ -227,12 +227,12 @@ export class SweetalertComponent implements OnInit {
         'Question 3'
       ])
       .then(result => {
-        if (result.value) {
+        if (result) {
           Swal.fire({
             title: 'All done!',
             html:
               'Your answers: <pre><code>' +
-              JSON.stringify(result.value) +
+              JSON.stringify(result) +
               '</code></pre>',
             confirmButtonText: 'Lovely!'
           });
