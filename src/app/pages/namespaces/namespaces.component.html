@@ -1,6 +1,9 @@
 <div class="container-fluid">
 <app-page-title title="" [breadcrumbItems]="breadCrumbItems"></app-page-title>
-<div class="test-rightbtn"><button type="button" (click)="openModal(content)" class="btn btn-info btn-sm">Request a Namespace</button></div>
+<div class="test-rightbtn">
+  <button type="button" (click)="openModal(content1)" class="btn btn-info btn-sm" style="margin-right: 10px;">Change Quota</button>
+  <button type="button" (click)="openModal(content)" class="btn btn-info btn-sm">Request a Namespace</button>
+</div>
   <div class="row">
     <div class="col-12">
       <div class="card">
@@ -151,6 +154,58 @@
   <div class="modal-footer">
     <button type="button" class="btn btn-light btn-sm" (click)="modal.close('Close click')">Close</button>
     <button type="button" class="btn btn-primary btn-sm">Request Namespace</button>
+  </div>
+</ng-template>
+
+<ng-template #content1 role="document" let-modal>
+  <div class="modal-header">
+    <h6 class="modal-title mt-0">Change Quota Namespace1</h6>
+    <button type="button" class="close" aria-hidden="true" (click)="modal.dismiss('Cross click')">×</button>
+  </div>
+  <div class="modal-body">
+
+      <div class="form-group row">
+            <label class="col-md-2 col-form-label">CPU</label>
+            <div class="col-md-10">
+              <select class="form-control form-control-sm">
+                <option>16 vCPU</option>
+                <option>32 vCPU</option>
+                <option>64 vCPU</option>
+                <option>128 vCPU</option>
+              </select>
+            </div>
+      </div>
+
+       <div class="form-group row">
+            <label class="col-md-2 col-form-label">Memory</label>
+            <div class="col-md-10">
+              <select class="form-control form-control-sm">
+                <option>128 GB</option>
+                <option>256 GB</option>
+                <option>500 GB</option>
+              </select>
+            </div>
+      </div>
+
+
+       <div class="form-group row">
+            <label class="col-md-2 col-form-label">Storage</label>
+            <div class="col-md-10">
+              <select class="form-control form-control-sm">
+                <option>100 GB</option>
+                <option>500 GB</option>
+                <option>1024 GB</option>
+              </select>
+            </div>
+      </div>
+
+
+     
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light btn-sm" (click)="modal.close('Close click')">Close</button>
+    <button type="button" class="btn btn-primary btn-sm">Request Quota Change</button>
   </div>
 </ng-template>
 

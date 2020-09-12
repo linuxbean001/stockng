@@ -1,7 +1,6 @@
 <div class="container-fluid">
   <app-page-title title="" [breadcrumbItems]="breadCrumbItems"></app-page-title>
-<div class="test-rightbtn"><button type="button" (click)="openModal(content)" class="btn btn-info btn-sm">Request a Project</button></div>
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-lg-12">
       <div class="card">
         <div class="card-body">
@@ -13,7 +12,7 @@
               </a>
               <ng-template ngbNavContent>
                 <ng-template [ngTemplateOutlet]="General"></ng-template>
-              </ng-template>
+              </ng-template> 
             </li>
             <li [ngbNavItem]="2">
               <a ngbNavLink class="navbarshow">
@@ -28,13 +27,18 @@
           <div [ngbNavOutlet]="justifiednav"></div>
         </div>
       </div>
-    </div><!-- End Justified Tabs -->
-  </div>
+    </div>
+  </div> -->
 
+</div>
+<div class="row text-center report-section" *ngIf="showButton">
+  <div class="col-lg-12">
+    <button type="button" (click)="showReport()" class="btn btn-info btn-sm reports-button">Reports</button>
+</div>
 </div>
 
  <!-- Tab Content -->
-  <ng-template #General>
+  <!-- <ng-template #General>
     <div class="row">
     <div class="col-lg-12">
       <div class="card">
@@ -79,11 +83,11 @@
     </div>
 
   </div>
-  </ng-template>
+  </ng-template> -->
 
   <!-- Tab Content -->
-  <ng-template #reports>
-   <div class="row">
+  <!-- <ng-template > -->
+   <div class="row" *ngIf="showTable">
     <div class="col-lg-12">
       <div class="card">
         <div class="card-body">    
@@ -95,7 +99,7 @@
                   <th>Report</th>
                   <th>Date</th>
                   <th>123</th>
-                  <th></th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -132,7 +136,7 @@
     </div>
 
   </div>
-  </ng-template>
+  <!-- </ng-template> -->
 
   <!-- Standard Modal -->
 <ng-template #content role="document" let-modal>

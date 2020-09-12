@@ -28,6 +28,13 @@ export class ContainerregistryComponent implements OnInit {
     this.modalService.open(content);
   }
 
+  showTable: boolean = false;
+  showButton: boolean = true;
+  showReport() {
+    this.showTable = !this.showTable;
+    this.showButton = !this.showButton;
+  }
+
 
 
 

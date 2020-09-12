@@ -33,12 +33,14 @@ export const BUMENU: MenuItem[] = [
         label: 'Namespaces',
         icon: 'bx bx-baseball',
         link: '/bu/namespaces/list',
-    },{
+    },
+    /*{
         id: 7,
         label: 'Change Quota',
         icon: 'bx bx-task',
         link: '/bu/changequota',
-    },{
+    },*/
+    {
         id: 8,
         label: 'Container Registry',
         icon: 'bx bx-arrow-to-left',
