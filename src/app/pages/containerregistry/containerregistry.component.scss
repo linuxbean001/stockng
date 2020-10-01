@@ -25,6 +25,14 @@ th.stsrm::after {
 }
 
 .report-section{
-    margin-top: 120px;
+    //margin-top: 120px;
 }
 
+.table tr.active td {  
+	background-color:skyblue !important;  
+	color: white;  
+} 
+
+.table tr{
+	cursor: pointer;
+}

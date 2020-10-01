@@ -15,3 +15,12 @@ th.stsrm::after {
 .pointer{
   cursor: pointer;
 }
+
+.table tr.active td {  
+	background-color:skyblue !important;  
+	color: white;  
+} 
+
+.table tr{
+	cursor: pointer;
+}

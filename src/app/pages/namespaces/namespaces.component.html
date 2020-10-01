@@ -1,7 +1,7 @@
 <div class="container-fluid">
 <app-page-title title="" [breadcrumbItems]="breadCrumbItems"></app-page-title>
 <div class="test-rightbtn">
-  <button type="button" (click)="openModal(content1)" class="btn btn-info btn-sm" style="margin-right: 10px;">Change Quota</button>
+  <button type="button" (click)="openModal(content1)" [disabled]="click" class="btn btn-info btn-sm" style="margin-right: 10px;">Change Quota</button>
   <button type="button" (click)="openModal(content)" class="btn btn-info btn-sm">Request a Namespace</button>
 </div>
   <div class="row">
@@ -47,7 +47,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let table of tables$ | async">
+                <tr *ngFor="let table of tables$ | async;let i = index" (click)="ClickedRow(i)" [ngClass]="{'active': HighlightRow == i}">
                   <td>
                   	<!--  <i class="far fa-check-square"></i>&nbsp;  -->
                     <!-- <ngb-highlight class="text-primary pointer" routerLink="/bu/namespaces/user" routerLinkActive="active" [result]="table.namespace" [term]="service.searchTerm"></ngb-highlight> -->

@@ -1,5 +1,9 @@
 <div class="container-fluid">
   <app-page-title title="" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <div class="test-rightbtn">
+    <button type="button" class="btn btn-info btn-sm" style="margin-right: 10px;">Create Project</button>
+    <button type="button" (click)="openModal(content)" [disabled]="click" class="btn btn-info btn-sm">Reports</button>
+  </div>
   <!-- <div class="row">
     <div class="col-lg-12">
       <div class="card">
@@ -31,11 +35,11 @@
   </div> -->
 
 </div>
-<div class="row text-center report-section" *ngIf="showButton">
+<!-- <div class="row text-center report-section" *ngIf="showButton">
   <div class="col-lg-12">
     <button type="button" (click)="showReport()" class="btn btn-info btn-sm reports-button">Reports</button>
 </div>
-</div>
+</div> -->
 
  <!-- Tab Content -->
   <!-- <ng-template #General>
@@ -87,13 +91,12 @@
 
   <!-- Tab Content -->
   <!-- <ng-template > -->
-   <div class="row" *ngIf="showTable">
+   <div class="row">
     <div class="col-lg-12">
       <div class="card">
         <div class="card-body">    
           <div class="table-responsive">
             <table class="table table-bordered mb-0">
-
               <thead>
                 <tr>
                   <th>Report</th>
@@ -103,29 +106,11 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Report1</td>
-                  <td>May20</td>
-                  <td>2020</td>
-                  <td>ss</td>
-                </tr>
-               <tr>
-                  <td>Report1</td>
-                  <td>May20</td>
-                  <td>2020</td>
-                  <td>ss</td>
-                </tr>
-                <tr>
-                  <td>Report1</td>
-                  <td>May20</td>
-                  <td>2020</td>
-                  <td>ss</td>
-                </tr>
-                <tr>
-                  <td>Report1</td>
-                  <td>May20</td>
-                  <td>2020</td>
-                  <td>ss</td>
+                <tr *ngFor="let row of reports;let i = index" (click)="ClickedRow(i)" [ngClass]="{'active': HighlightRow == i}">
+                  <td>{{row.name}}</td>
+                  <td>{{row.date}}</td>
+                  <td>{{row.year}}</td>
+                  <td>{{row.action}}</td>
                 </tr>
               </tbody>
             </table>

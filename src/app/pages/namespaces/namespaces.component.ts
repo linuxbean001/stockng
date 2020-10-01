@@ -24,6 +24,10 @@ import { NamespacesSortableDirective, SortEvent } from './namespaces-sortable.di
  * Advanced table component
  */
 export class NamespacesComponent implements OnInit {
+
+  HighlightRow : number;
+  click : boolean = true;
+
   // bread crum data
   breadCrumbItems: Array<{}>;
 
@@ -63,6 +67,16 @@ export class NamespacesComponent implements OnInit {
    */
   openModal(content: any) {
     this.modalService.open(content);
+  }
+
+  ClickedRow(index){
+    if(this.click){
+      this.HighlightRow = index;
+      this.click = false;
+    }else{
+      this.HighlightRow = null;
+      this.click = true;
+    }
   }
 
 
