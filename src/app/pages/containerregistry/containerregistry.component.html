@@ -34,7 +34,7 @@
     </div>
   </div> -->
 
-</div>
+</div> 
 <!-- <div class="row text-center report-section" *ngIf="showButton">
   <div class="col-lg-12">
     <button type="button" (click)="showReport()" class="btn btn-info btn-sm reports-button">Reports</button>
@@ -96,26 +96,53 @@
       <div class="card">
         <div class="card-body">    
           <div class="table-responsive">
-            <table class="table table-bordered mb-0">
+            <table id="basic-datatable"
+              class="table table-bordered dt-responsive nowrap datatables no-footer dtr-inline">
               <thead>
                 <tr>
-                  <th>Report</th>
-                  <th>Date</th>
-                  <th>123</th>
-                  <th>Action</th>
+                  <th sortable="reports" (sort)="onSort($event)">Reports</th>
+                  <th sortable="date" class="stsrm"  (sort)="onSort($event)">Date</th>
+                  <th sortable="year" class="stsrm"  (sort)="onSort($event)">123</th>
+                  <th sortable="action" (sort)="onSort($event)">Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let row of reports;let i = index" (click)="ClickedRow(i)" [ngClass]="{'active': HighlightRow == i}">
-                  <td>{{row.name}}</td>
-                  <td>{{row.date}}</td>
-                  <td>{{row.year}}</td>
-                  <td>{{row.action}}</td>
+                <tr *ngFor="let table of tables$ | async;let i = index" (click)="ClickedRow(i)" [ngClass]="{'active': HighlightRow == i}">
+                  <td>
+                    <!--  <i class="far fa-check-square"></i>&nbsp;  -->
+                    <!-- <ngb-highlight class="text-primary pointer" routerLink="/bu/namespaces/user" routerLinkActive="active" [result]="table.namespace" [term]="service.searchTerm"></ngb-highlight> -->
+                     <ngb-highlight  [result]="table.reports" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.date" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.year" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.action" [term]="service.searchTerm"></ngb-highlight>
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
-
+          <div class="row justify-content-md-between align-items-md-center mt-2">
+            <div class="col-sm-12 col-md-5">
+              <div class="dataTables_info mb-2" id="tickets-table_info" role="status" aria-live="polite">Showing
+                {{service.startIndex}} to
+                {{service.endIndex}} of {{service.totalRecords}}
+                entries
+              </div>
+            </div>
+            <!-- Pagination -->
+            <div class="col-sm-12 col-md-5">
+              <div class="text-md-right float-md-right pagination-rounded">
+                <ngb-pagination [collectionSize]="total$ | async" [(page)]="service.page" [pageSize]="service.pageSize">
+                </ngb-pagination>
+              </div>
+            </div>
+            <!-- End Pagination -->
+          </div>
         </div>
       </div>
     </div>

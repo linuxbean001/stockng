@@ -70,12 +70,12 @@ export class NamespacesComponent implements OnInit {
   }
 
   ClickedRow(index){
-    if(this.click){
-      this.HighlightRow = index;
-      this.click = false;
-    }else{
+    if(this.HighlightRow === index){
       this.HighlightRow = null;
       this.click = true;
+    }else{
+      this.HighlightRow = index;
+      this.click = false;
     }
   }
 
